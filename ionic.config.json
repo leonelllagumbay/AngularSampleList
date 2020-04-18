@@ -1,0 +1,7 @@
+{
+  "name": "OfflineChatBot",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
