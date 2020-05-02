@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as tf from '@tensorflow/tfjs';
+import { StemmerService } from '../service/stemmer.service';
 
 // Tensors -> rank, shape, dtype
 /**
@@ -157,11 +158,10 @@ import * as tf from '@tensorflow/tfjs';
 // const model = await tf.loadLayersModel('file://path/to/my-model');
 
 // Loading converted model
-const MODEL_PATH = 'assets/tensorflowjs/test/model.json';
+// const MODEL_PATH = 'assets/tensorflowjs/firstTensor/model.json';
+const MODEL_PATH = 'assets/tensorflowjs/chatbot/model.json';
 console.log('MODEL_PATH', MODEL_PATH);
-tf.loadLayersModel(MODEL_PATH).then((m: any) => {
-  console.log('loaded model is', m);
-});
+
 
 
 @Component({
@@ -171,9 +171,10 @@ tf.loadLayersModel(MODEL_PATH).then((m: any) => {
 })
 export class HomePage implements OnInit {
 
-  constructor() {}
+  constructor(private readonly stemmerService: StemmerService) {}
 
   ngOnInit() {
+    this.loadLayerModel();
     const model = tf.sequential();
     // console.log('model', model);
     model.add(tf.layers.dense({
@@ -199,6 +200,17 @@ export class HomePage implements OnInit {
     model.fit(xs, ys).then(() => {
       (model.predict(tf.tensor2d([[1, 0]], [1, 2])) as any).print();
     });
+  }
+
+  async loadLayerModel() {
+    const testWord = this.stemmerService.stemmer('detestable');
+    console.log('stemmer test', testWord);
+    const m = await tf.loadLayersModel(MODEL_PATH);
+    console.log('model chatbot', m);
+    const input = tf.tensor2d([[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0,
+      0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1]], [1, 48]);
+    (m.predict(input) as any).print();
   }
 
 }
