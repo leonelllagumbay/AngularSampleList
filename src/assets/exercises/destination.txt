@@ -1,0 +1,685 @@
+Node.js
+
+Assert
+
+Strict assertion mode
+Legacy assertion mode
+Class: assert.AssertionError
+
+new assert.AssertionError(options)
+assert(value[, message])
+assert.deepEqual(actual,expected[, message])
+
+Comparison details
+assert.deepStrictEqual(actual, expected[, message])
+Comparison details
+assert.deepStrictEqual(actual, expected[, message])
+assert.doesNotMatch(string, regexp[, message])
+assert.doesNotReject(asyncFn[, error][, message])
+assert.doesNotThrow(fn[, error][, message])
+assert.equal(actual, expected[, message])
+assert.fail([message])
+assert.fail(actual, expected[, message[, operator[, stackStartFn]]])
+assert.ifError(value)
+assert.match(string, regexp[, message])
+assert.notDeepEqual(actual, expected[, message]);
+assert.notDeepStrictEqual(actual, expected[, message])
+assert.notEqual(actual, expected[, message])
+assert.notStrictEqual(actual, expected[, message])
+assert.ok(value[, message])
+assert.rejects(asyncFn[, error][, message])
+assert.strictEqual(actual, expected[, message])
+assert.throws(fn[, error][, message])
+
+Async Hooks
+
+async_hooks.createHook(callbacks)
+
+Error Handling
+Printing in AsyncHooks callbacks
+asyncHook.enable()
+asyncHook.disable()
+
+Hooks callbacks
+init(asyncId, type, triggerAsyncId, resource)
+
+type
+triggerAsyncId
+resource
+Asynchronous context example
+before(asyncId)
+after(asyncId)
+destroy(asyncId)
+promiseResolve(asyncId)
+async_hooks.executionAsyncId()
+async_hooks.triggerAsyncId()
+Promise execution tracking
+JavaScript Embedder AP
+
+Class: AsyncResource
+
+new AsyncResource(type[, optons])
+asyncResource.runInAsyncScope(fn[, thisArg, ...args])
+asyncResource.emitDestroy()
+asyncResource.asyncId()
+asyncResource.triggerAsyncId()
+
+Using AsyncResource for a Worker thread promiseResolve
+Buffer
+
+Buffer.from(), Buffer.alloc() and Buffer.allocUnsafeSlow() "unsafe"
+
+The --zero-fill-buffers command line options
+What makes Buffer.allocUnsafe() and Buffer.allocUnsafeSlow() "unsafe"?
+Buffers and Character Encodings
+
+Buffers and TypedArray
+Buffers and iteration
+Class: Buffer
+
+new Buffer(array)
+new Buffer(arrayBuffer[, byteOffset[, length]])
+new Buffer(buffer)
+new Buffer(size)
+new Buffer(string[, encoding])
+Class Method: Buffer.alloc(size[, fill[, encoding]])
+Class Method: Buffer.allocUnsafe(size)
+Buffer.allocUnsafeSlow(size)
+Buffer.byteLength(string[, encoding])
+Buffer.compare(buf1, buf2)
+Buffer.concat(list[, totalLength])
+Buffer.from(array)
+Buffer.from(arrayBuffer[, byteOffset[, length]])
+Buffer.from(buffer)
+Buffer.from(object[, offsetOrEncoding[, length]])
+Buffer.from(string[, encoding])
+Buffer.isBuffer(obj)
+Buffer.isEncoding(encoding)
+Class Property: Buffer.poolSize
+buf[index]
+buf.bufferbuf.byteOffset
+buf.compare(target[, targetStart[, targetEnd[, sourceStart[, sourceEnd]]]])
+buf.copy(target[, targetStart[, sourceStart[, sourceEnd]]])
+buf.entries()
+buf.equals(otherBuffer)
+buf.fill(value[, offset[, end]][, encoding])
+buf.includes(value[, byteOffset][, encoding])
+buf.indexOf(value[, byteOffset][, encoding])
+buf.keys()
+buf.lastIndexOf(value[, byteOffset][, encoding])
+buf.length
+buf.parent
+buf.readBigInt64BE([offset])
+buf.readBigInt64LE([offset])
+buf.readBigUInt64BE([offset])
+buf.readBigUInt64LE([offset])
+buf.readDoubleBE([offset])
+buf.readDoubleLE([offset])
+buf.readFloatBE([offset])
+buf.readFloatLE([offset])
+buf.readInt8([offset])
+buf.readInt16BE([offset])
+buf.readInt16LE([offset])
+buf.readInt32BE([offset])
+buf.readInt32LE([offset])
+buf.readIntBe(offset, byteLength)
+buf.readIntLE(offset, byteLength)
+buf.readUint8([offset])
+buf.readUInt16BE([offset])
+buf.readUInt16LE([offset])
+buf.readUInt32BE([offset])
+buf.readUInt32LE([offset])
+buf.readUIntBE(offset, byteLength)
+buf.readUIntLE(offset, byteLength)
+buf.subarray([start[, end]])
+buf.slice([start[, end]])
+buf.swag16()
+buf.swap32()
+buf.swap64()
+buf.toJSON()
+buf.toString([encoding[, start[, end]]])
+buf.values()
+buf.write(string[, offset[, length]][, encoding])
+buf.writeBigInt64BE(value[, offset])
+buf.writeBigInt64LE(value[, offset])
+buf.writeBigUInt64BE(value[, offset])
+buf.writeBigUInt64LE(value[, offset])
+buf.writeDoubleBE(value[, offset])
+buf.writeDoubleBE(value[, offset])
+buf.writeDoubleLE(value[, offset])
+buf.writeFloatBE(value[, offset])
+buf.writeFloatLE(value[, offset])
+buf.writeInt8(value[, offset])
+buf.writeInt16BE(vaue[, offset])
+buf.writeInt16LE(value[, offset])
+buf.writeInt32BE(value[, offset])
+buf.writeInt32LE(value[, offset])
+buf.writeIntBE(value, offset, byteLength)
+buf.writeIntLE(value, offset, byteLength)
+buf.writeUInt8(value[, offset])
+buf.writeUInt16BE(value[, offset])
+buf.writeUInt16LE(value[, offset])
+buf.writeUInt32BE(value[, offset])
+buf.writeUInt32LE(value[, offset])
+buf.writeUIntBE(value, offset, byteLength)
+bug.writeUIntLE(value, offset, byteLength)
+buffer.INSPECT_MAX_BYTES
+
+BUFFER.KMaxLength
+buffer.transcode(source, from Enc, toEnc)
+Class: SlowBuffer
+
+new SlowBuffer(size)
+Buffer Constants
+
+buffer.constants.MAX_LENGTH
+buffer.contants.MAX_STRING_LENGTH
+
+C++ Addons
+
+Hello world
+
+Context-aware Addons
+Worker support
+Building
+Linking to libraries included with Node.js
+Loading Addons using require()
+Native Abstractions for Node.js
+N-API
+Addon examples
+
+Function arguments
+callbacks
+Object factory
+Function factory
+Wrapping C++ objects
+Factory of wrapped objects
+Passing wrapped objects round
+
+N-API
+Implications of ABI Stability
+Building
+Build tools
+node-gyp
+CMake.js
+Uploading precompiled binaries
+node-pre-gyp
+prebuild
+prebuldify
+Usage
+N-API Version Matrix
+Environment Life Cycle APIs
+
+napi_set_instance_data
+napi_get_instance_data
+Basic N-API Data Types
+
+napi_status
+napi_extended_error_info
+napi_env
+napi_value
+napi_threadsafe_function
+napi_threadsafe_function_release_mode
+napi_threadsafe_function_call_mode
+N-API Memory Management Types
+
+napi_handle_scope
+napi_escapable_handle_scope
+napi_ref
+N-API  Callback types
+
+napi_callback_info 
+napi_callback 
+napi_finalize
+napi_async_execute_callback
+napi_async_complete_callback
+napi_threadsafe_function_call_js
+Error Handlilng
+
+Return values
+napi_get_last_error_info
+Exceptions
+
+napi_throw 
+napi_throw_error
+napi_throw_type_error 
+napi_throw_range_error
+napi_is_error
+napi_create_error
+napi_create_type_error
+napi_create_range_error
+napi_get_and_clear_last_exception
+npai_is_exception_pending
+napi_fatal_exception
+Fatal Errors
+
+napi_fatal_error
+Object Lifetime Management
+
+making handle lifespan shorter thatn that of the
+native Method
+napi_open_hanlde_scope
+napi_close_handle_scope
+
+napi_open_escapable_handle_scope
+napi_close_escapable_hanlde_scope
+
+napi_escape_handle 
+
+Reference to objects with a lifespan longer 
+than that of the natvie method 
+
+napi_create_reference
+napi_delete_reference
+napi_reference_ref
+napi_reference_unref
+napi_get_reference_value
+
+Cleanup on exit of the current Nodejs instance 
+
+napi_add_env_cleanup_hook
+napi_remove_env_cleanup_hook
+Module registration
+Working with JavaScript Values 
+
+Enum types
+
+napi_valuetype
+napi_typedarray_type
+Object Creation Functions 
+
+napi_create_array
+napi_create_array_with_length
+napi_creaet_arraybuffer
+
+napi_create_buffer
+napi_create_buffer_copy
+napi_create_date
+napi_create_external
+napi_create-external_arraybuffer
+napi_create_external_buffer
+napi_create_object
+napi_create_symbol
+napi_create_typedarray
+napi_create_dataview
+Functions to convert from C types to N-API 
+
+napi_create_int32
+napi_create_uint32
+napi_create_int64
+napi_create_double
+napi_create_bigint_int64
+napi_create_bigint_words
+napi_create_string_latin1
+napi_create_string_utf16
+napi_create_string_utf8
+Functions to convert from N-API TO C types 
+
+napi_get_array_length
+napi_get_arraybuffer_info
+napi_get_buffer_info 
+napi_get_prototype
+napi_get_typedarray_info
+napi_get_dataview_info
+napi_get_date_value
+napi_get_value_bool
+napi_get_value_double
+napi_get_value_bigiint-int64 
+napi_get_value_bigint_words
+napi_get_value_external
+napi_get_value_int32
+napi_get_value_int64
+napi_get_value_string_latin1
+napi_get_value_string_utf8
+napi_get_value_string_utf16
+napi_get_value_uint32
+Functions to get global instance 
+
+napi_get_boolean 
+napi_get_global
+ napi_get_null
+ napi_get_undefiend
+
+ Working with JavaScript Values and Abstractions
+Operations
+
+napi_coerce_to_bool
+napi_coerce_to_number
+napi_coerce_to_object 
+napi_coerce_to_string
+napi_typeof
+napi_instanceof 
+napi_is_array
+napi_is_arraybuffer
+napi_is_buffer 
+napi_is_date 
+napi_is_error
+napi_is_typedarray
+napi_is_dataview 
+napi_strict_equals 
+napi_detach_arraybuffer
+napi_is_detached_arraybuffer
+Working with JavaScript Properties
+Structures
+
+napi_property_attributes
+napi_property_descriptor
+Functions
+
+napi_get_property_names
+napi_set_property
+napi_get_property 
+napi_has_property
+napi_delete_property
+napi_has_own_property
+nap_set_named_property
+napi_get_named_property
+napi_has_named_property
+napi_set_element
+napi_get_element
+napi_has_element
+napi_delete_element
+napi_define_properties
+Working with JavaScript Functions 
+
+napi_call_function
+napi_create_function
+napi_get_cb_info
+napi_get_new_target
+napi_new_instance
+Object Wrap 
+
+napi_define_class
+napi_wrap
+napi_unwrap
+napi_remove_wrap
+napi_add_finalizer
+Simple Asynchronous Operations 
+
+napi_create_async_work
+napi_delete_async_work
+napi_queue_async_work
+napi_cancel_async_works
+Custom Asynchrounous Operations 
+
+napi_async_init
+napi_async_destroy
+napi_make_callback
+napi_open_callback_scope
+napi_close_callback_scope
+Version Management
+
+napi_get_node_version
+napi_get_version 
+Memory Management
+napi_adjust_external_memory
+
+Promises 
+
+napi_create_promise 
+napi_resolve_deferred
+napi_reject_derred
+napi_is_promise
+Script execution 
+
+napi_run_script
+libuv event loop
+
+napi_get_uv_event_loop
+Asynchronous Thread-safe Function calls 
+
+napi_create_threadsafe_function
+napi_get_threadsafe_function_context
+napi_call_threadsafe_function
+napi_acquire_threadsafe_function
+napi_release_threadsafe_function
+napi_ref_threadsafe_function
+napi_unref_threadsafe_function
+
+Child Processes
+Asynchronous Process Creation
+
+Spawning .bat and .cmd files on Windows
+child_process.exec(command[,
+options][, callback]])
+child_process.execFile(file[, args], [,
+optiosn][, callback])
+child_process.fork(modulePath[, args][,
+optiosn])
+child_process.span(command[, args][,
+optiions])
+
+options.detached 
+options.stdio 
+Synchronous Process Creation 
+
+child_process.execFileSync(file[, 
+args][, options]])
+
+child_process.execSync(command[, options])
+child_process.spanSync(command[,
+args][, options]])
+
+Event: 'close'
+Event: 'disconnect'
+error
+exit 
+message
+
+subprocess.channel
+subprocess.connected
+subprocess.disconnect()
+subprocess.exitCode
+subprocess.kill([signal])
+subprocess.killed
+subprocess.pid 
+subprocess.ref() 
+subprocess.send(message[, 
+sendHandle[, options]][, callback]])
+Example sending a server object 
+subprocess.signalCode
+subprocess.spawargs
+subprocess.stderr 
+subprocess.stdin 
+subprocess.stdout
+subprocess.unref() 
+maxBuffer and Unicode
+
+Shell Requirements
+Default Windows Shell 
+Advanced Serialization 
+
+Cluster
+How It Works 
+Class: Worker
+
+Event: 'disconnect'
+Event: 'error'
+Event: 'exit'
+Event: 'listening'
+Event: 'message'
+Event: 'online'
+worker.disconnect()
+worker.exitedAfterDisconnect
+worker.id 
+worker.isConnected
+worker.isDead 
+worker.kill([signal='SIGTERM'])
+worker.process 
+
+worker.send(message[, sendHandle[, options]][, callback])
+Event: 'disconnect'
+Event: 'exit'
+Event: 'fork'
+Event: 'listening'
+Event: 'message'
+EVent: 'online'
+Event: 'setup'
+Cluster.disconect([callback])
+
+cluster.fork([env])
+cluster.isMaster
+cluster.isWorker
+cluster.schedulingPoilcy
+cluster.settings
+cluster.setupmaster([settings])
+cluster.worker
+cluster.workers 
+
+Command Line Options
+
+--abort-on-uncaught-exception 
+--completion-bash 
+--cpu-prof 
+--cpu-prof-interval
+--cpu-prof-name 
+--disallow-code-generation-from-strings 
+--enable-fips 
+--enable-source-maps 
+--experimental-import-meta-resolve 
+--experimental-json-modules 
+--experimental-loader=module 
+--experimental-modules 
+--experimental-policy 
+--experimental-repl-await 
+--experimental-report 
+--experimental-specifier-resolution=mode 
+--experimental-vm-modules 
+--experimental-wasi-unstable-preview1 
+--experimental-wasm-modules 
+--force-fips 
+--frozen-intrinsics 
+--heapsnapshot-signla=signal 
+--heap-prof 
+--heap-prof-dir 
+--heap-prof-name 
+--http-parser=library 
+--http-server-default-timeout=milliseconds 
+--icu-data-dir=file 
+--input-type=type 
+--inspect-brk[=[host:]port] 
+--inspect-port=[host:]port 
+--inspect[=[host:]port] 
+
+Warning: binding inspector to a public 
+IP: port combination in insecure
+--inspect-publish-uid=stderr,http 
+--insecure-http-parser 
+--jitless 
+--max-http-header-size=size 
+--napi-modules 
+--no-deprecation 
+--no-force-async-hooks-checks 
+--no-warnings 
+--force-context-aware 
+--openssl-config=file 
+--pending-deprecation 
+--policy-integrity=sri 
+--preserve-symlinks 
+--preserve-symlinks-main 
+--prof 
+--prof-process 
+--redirect-warnings=file 
+--report-directory=directory 
+--report-filename=filename 
+--report-on-fatalerror 
+--report-on-signal 
+--report-uncaught-exception 
+--throw-deprecation 
+--title=title 
+--tls-cipher-list=list 
+--tls-keylog=file 
+--tls-max-v1.2
+--tls-max-v1.3
+--tls-min-v1.0
+--tls-min-v1.1
+--tls-min-v1.2
+--tls-min-v1.3
+--trace-deprecation 
+--trace-event-categories 
+--trace-event-file-pattern 
+--trace-events-enabled 
+--trace-exit 
+--trace-sync-io 
+--trace-tls 
+--trace-uncaught 
+--trace-warnings 
+--track-heap-objects 
+--unhandles-rejections=mode 
+--use-bundled-ca, --use-openssl-ca 
+--v8-options 
+--v8-pool-size=num 
+--zero-fill-buffers 
+-c, --check 
+-e, --eval "script"
+-h, --help 
+-i, --interactive 
+-p, --print "script" 
+-r, --require module 
+-v, --version 
+Environment Variables
+
+NODE_DEBUG=module[,...] 
+NODE_DEBUG_NATIVE[=module[,...]] 
+NODE_DISABLE_COLORS=1 
+NODE_EXTRA_CA-CERTS=file 
+NODE_ICU_DATA=file 
+NODE_NO_WARNINGS=1 
+NODE_OPTIONS=options... 
+NODE_PATH=path[:...]
+NODE_PENDING_DEPRECATION=1 
+NODE_PENDING_PIPE_INSTANCES=instances 
+NODE_PRESERVE_SYMLINKS=1 
+NODE_REDIRECT_WARNINGS=file 
+NODE_REPL_HISTORY=file 
+NODE_REPL_EXTERNAL_MODULE=file 
+NODE_TLS_REJECT_UNAUTHORIZED=value 
+NODE_V8_COVERAGE=dir 
+
+Coverage Output 
+Source Map Cache 
+OPENSSL_CONF=file 
+SSL_CERT_DIR=dir 
+SSL_CERT_FILE=file 
+UV_THREADPOOL_SIZE=size 
+
+Console
+
+Class: Console 
+new Console(stdout[, stderr][, ignoreErrors]) 
+new Console(options)
+console.assert(value[, ...message]) 
+console.clear()
+console.count([label])
+console.countReset([label]) 
+console.debug(data[, ...args]) 
+console.dir(obj[, options]) 
+console.dirxml(...data)
+console.error([data][, ..args])
+console.group([...label])
+console.groupCollapsed()
+console.groupEnd()
+console.info([data][, ...args])
+console.log([data][, ...args])
+console.table(tabularData[, properties])
+console.time([label])
+console.timeEnd([label])
+console.timeLog([label][, ..data])
+console.trace([message][, ...args])
+console.warn([data][, ...args])
+Inspector only methods
+
+console.profile([label])
+console.profileEnd([label])
+console.timeStamp([label])
+
+Crypto
+
+Determining if crypto support is unavailable
+Class: Certificate
+
+
+
+
+
+

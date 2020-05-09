@@ -1,0 +1,15 @@
+<form #chatBotForm="ngForm" (ngSubmit)="onSubmit()">
+  <ion-input placeholder="Enter question" class="form-control" name="question"
+  [(ngModel)]="question"
+  [disabled]="!modelFitComplete"
+  ></ion-input>
+</form>
+
+<div *ngFor="let conv of conversations">
+  <i>
+    {{conv?.question}}
+  </i>
+  <div>
+    {{conv?.answer}}
+  </div>
+</div>
