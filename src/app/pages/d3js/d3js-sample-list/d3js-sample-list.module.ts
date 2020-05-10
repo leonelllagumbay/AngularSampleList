@@ -9,6 +9,7 @@ import { D3jsSampleListPageRoutingModule } from './d3js-sample-list-routing.modu
 import { D3jsSampleListPage } from './d3js-sample-list.page';
 import { BasicChartComponent } from './components/basic-chart/basic-chart.component';
 import { HttpClientModule } from '@angular/common/http';
+import { CumsumComponent } from './components/cumsum/cumsum.component';
 
 @NgModule({
   imports: [
@@ -18,6 +19,6 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     D3jsSampleListPageRoutingModule
   ],
-  declarations: [D3jsSampleListPage, BasicChartComponent]
+  declarations: [D3jsSampleListPage, BasicChartComponent, CumsumComponent]
 })
 export class D3jsSampleListPageModule {}
