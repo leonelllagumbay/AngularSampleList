@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { TensorFlowjsSampleListPage } from './tensor-flowjs-sample-list.page';
 import { OfflineChatBotComponent } from './components/offline-chat-bot/offline-chat-bot.component';
+import { QuickSampleComponent } from './components/quick-sample/quick-sample.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
   }, {
     path: 'offline-chat-bot',
     component: OfflineChatBotComponent
+  }, {
+    path: 'quick-sample',
+    component: QuickSampleComponent
   }
 ];
 

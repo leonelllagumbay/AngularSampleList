@@ -8,6 +8,7 @@ import { TensorFlowjsSampleListPageRoutingModule } from './tensor-flowjs-sample-
 
 import { TensorFlowjsSampleListPage } from './tensor-flowjs-sample-list.page';
 import { OfflineChatBotComponent } from './components/offline-chat-bot/offline-chat-bot.component';
+import { QuickSampleComponent } from './components/quick-sample/quick-sample.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -19,6 +20,6 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     TensorFlowjsSampleListPageRoutingModule
   ],
-  declarations: [TensorFlowjsSampleListPage, OfflineChatBotComponent]
+  declarations: [TensorFlowjsSampleListPage, OfflineChatBotComponent, QuickSampleComponent]
 })
 export class TensorFlowjsSampleListPageModule {}

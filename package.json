@@ -26,6 +26,8 @@
     "@ionic/angular": "^5.0.0",
     "@tensorflow/tfjs": "^1.7.2",
     "core-js": "^2.5.4",
+    "d3": "^5.16.0",
+    "d3-array": "^2.4.0",
     "rxjs": "~6.5.1",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.1"
