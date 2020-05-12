@@ -678,8 +678,193 @@ Crypto
 Determining if crypto support is unavailable
 Class: Certificate
 
+Certificate.exportChallenge(spkac)
+Certificate.exportPublicKey(spkac[, encoding])
+Certifcatie.verifySpkac(spkac)
+Legacy API 
+
+new crypto.Certificate()
+certificate.exportChallenge(spkac) 
+certificate.exportPublicKey(spkac) 
+certificate.verifySpkac(spkac) 
+Class: Cipher 
+
+cipher.final([outputEncoding]) 
+cipher.setAAD(buffer[, options]) 
+cipher.getAuthTag() 
+cipher.setAutoPadding([autoPadding]) 
+cipher.udpate(data[, inputEncoding][, outputEncoding]) 
+Class: Decipher 
 
 
+decipher.final([outputEncoding]) 
+decipher.setAAD(buffer[, optios])
+decipher.setAuthTag(buffer) 
+decipher.setAutoPadding([autoPadding]) 
+decipher.update(data[, inputEncoding][, outputEncoding])
+Class: DiffieHellman
+
+diffieHellman.computeSecret(otherPublicKey[, inputEncodiing]) 
+diffieHellman.generateKeys([encoding]) 
+diffieHellman.getGenerator([encoding]) 
+diffieHellman.getPrime([encoding]) 
+diffieHellman.getPrivateKey([encoding]) 
+diffieHellman.getPublicKey([encoding]) 
+diffieHellman.setPrivateKey(privateKey[, encoding]) 
+diffieHellman.setPublicKey(publicKey[, encoding]) 
+diffieHellman.verifyError 
+Class: DiffieHellmanGroup
+Class: ECDH 
+
+Class Method: ECDH.convertKey(key, curve[, inputEncoding]) 
+ecdh.computeSecret(otherPublicKey[, intputEncoding]
+ecdh.generateKeys([encoding[, formate]])
+ecdh.getPrivateKey([encoding])
+ecdh.getPublicKey([encoding][, format])
+Class: Hash 
+
+hash.copy([options]) 
+hash.digest([encoding]) 
+hash.update(data[, inputEncoding]) 
+Class: Hmac 
+
+hmac.digets9[encoding])
+hmac.update(data[, inputEncoding]) 
+Class: KeyObject 
+
+keyObject.asymmetricKeyType
+keyObject.export([options]) 
+keyObject.symmetricKeySize 
+keyObject.type 
+Class: Sign 
+
+sign.sign(privateKey[, outputEncoding]) 
+sign.update(data[, inputEncoding]) 
+Class: Verify 
+
+verify.update(data[, inputEncoding]) 
+verify.update(data[, inputEncoding]) 
+verify.verify(object, signature[, signatureEncoding]) 
+crypto module methods and properties 
+
+crypto.constants 
+crypto.DEFAULT_ENCODING 
+crypto.fips 
+crypto.createCipher(algorithm, password[, options]) 
+crypto.createCipher(algorithm, key, iv[, options]) 
+crypto.createDecipher(algorithm, password[, options]) 
+crypto.createDecipherv(algorithm, key, iv[, optionss]) 
+crypto.createDiffieHellman(prime[, primeEncoding][,])
+crypto.createDiffiieHellman(primeLength[, generator]) 
+crypto.createDiffieHellmanGroup(name) 
+crypto.createECDH(curveName) 
+crypto.createHash(algorithm[, options]) 
+crypto.createHmac(algorithm, key[, options]) 
+crypto.createPrivateKey(key) 
+crypto.createPublicKey(key) 
+crypto.createSecretKey(key) 
+crypto.createSign(algorithm[, options]) 
+crypto.createVerify(algorithm[, options]) 
+crypto.generateKeyPair(type, options, callback) 
+crypto.generateKeyPairSync(type, options) 
+crypto.getCiphers()
+crypto..getCurves() 
+crypto.getDiffieHellman(groupName) 
+crypto.getFips() 
+crypto.getHashes() 
+crypto.pbkdf2(password, salt, iterations, keylen, ...) 
+crypto.pbkdf2Sync(password, salt, iteration, keylength) 
+crypto.privateDecrypt(privateKey, buffer) 
+crypto.privateEncrypt(privateKey, buffer) 
+crypto.publicDecrypt(key, buffer) 
+crypto.publicEncrypt(key, buffer) 
+crypto.randomBytes(size[, callback]) 
+crypto.randomFillSync(buffer[, offset][, size]) 
+crypto.randomFill(buffer[, offset][, size], callback) 
+crypto.scrypt(password, salt, keylen[, options\..
+crypto.scryptsSync(password, salt, keylen[, options]) 
+crypto.setEngine(engine[, flags]) 
+crypto.setFips(bool) 
+crypto.sign(algorithm, data, key) 
+crypto.timingSafeEqual(a, b) 
+crypto.verify(algorithm, data, key, signature)
+
+Debugger
+
+Watchers
+Command reference 
+
+Stepping 
+Breakpoints 
+Information 
+Execution control 
+Various 
+Advanced usage 
+
+
+V8 Inspector Integration for Node.js 
+
+// myscript.js 
+global.x = 5;
+setTimeout(() => {
+    debugger;
+    console.log('world');
+}, 1000);
+console.log('hello');
+
+node inspect myscript.js 
+debug> cont 
+debug> next 
+debug> repl 
+debug> .exit 
+
+Stepping# 
+cont, c: Continue execution 
+next, n: Step next 
+step, s: Step in 
+step, o: Step out 
+pause: Pause running code 
+(like pause button in Developer Tools)
+
+Breakpoints# 
+setBreakpoint(), sb(): Set breakpoint on current
+setBreakpoint(line), sb(line): 
+setBreakpoint('fn()'), sb(...);
+setBreakpoint('script.js', 1), sb(...);
+clearBreakpoint('script.js', 1), cb(...)
+
+Information# 
+backtrace, bt;
+list(5): 
+watch(expr): 
+unwatch(expr):
+watchers: List all watchers and their values 
+repl: Open debugger's repl for evaluation in debugger
+exec expr: Execute an expression in debugging script 
+Execution control# 
+run: Run script 
+restart: Restart script 
+kill: Kill script 
+Various# 
+scripts: List all loaded scripts 
+version: Display V8's version 
+Advanced Usage# 
+V8 Inspector Integration for Node.js# 
+attaching to Chrome 
+
+DNS 
+Class: dns.Resolver 
+resolver.cancel() 
+dns.getServers() 
+dns.lookup(hostname[, options], callback) 
+
+Supported getaddrinfo flags 
+dns.lookupService(address, port, callback) 
+dns.resolve(hostname[, rrtype], callback) 
+dns.resolve4(hostname[, options], callback) 
+dns.resolve6(hostname[, options], callback) 
+dns.resolveAny(hostname, callback) 
+dns.resolveCname(hostname, callback)
 
 
 

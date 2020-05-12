@@ -22,6 +22,7 @@ export class CumsumComponent implements OnInit {
   ngOnInit() {
     this.data = this.is1D ? this.getData() : this.getData2D();
     this.chart();
+    console.log('test', this.x()('1'));
   }
 
   toggleDimension() {
@@ -82,20 +83,22 @@ export class CumsumComponent implements OnInit {
 
   line = () => d3.line()
     .x((d: any) => {
-      return this.x()(d.x); // + this.x().bandwidth() / 2;
+      return this.is1D ? (this.x()(d.x) + this.x().bandwidth() / 2) : this.x2()(d.x);
     })
     .y((d: any) => {
       return this.y()(d.y);
     })
 
-  x = () => (d3 as any).scaleLinear()
+  x2 = () => (d3 as any).scaleLinear()
     .domain(d3.extent(this.data, (d: any) => d.x))
     .rangeRound([this.margin.left, this.width - this.margin.right])
 
-  // x = d3.scaleBand()
-  // .domain(data.map(d => d.year))
-  // .rangeRound([margin.left, width - margin.right])
-  // .padding(0.1)
+  x() {
+    return d3.scaleBand()
+    .domain(this.data.map(d => d.x))
+    .range([this.margin.left, this.width - this.margin.right])
+    .padding(0.1);
+  }
 
   y = () => (d3 as any).scaleLinear()
     .domain(d3.extent(this.data, (d: any) => d.y))

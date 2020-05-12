@@ -7,6 +7,8 @@ import { IonicModule } from '@ionic/angular';
 import { ThreeJSSampleListPageRoutingModule } from './three-jssample-list-routing.module';
 
 import { ThreeJSSampleListPage } from './three-jssample-list.page';
+import { Basic3Component } from './components/basic3/basic3.component';
+import { LightsHemisphereComponent } from './components/lights-hemisphere/lights-hemisphere.component';
 
 @NgModule({
   imports: [
@@ -15,6 +17,6 @@ import { ThreeJSSampleListPage } from './three-jssample-list.page';
     IonicModule,
     ThreeJSSampleListPageRoutingModule
   ],
-  declarations: [ThreeJSSampleListPage]
+  declarations: [ThreeJSSampleListPage, Basic3Component, LightsHemisphereComponent]
 })
 export class ThreeJSSampleListPageModule {}

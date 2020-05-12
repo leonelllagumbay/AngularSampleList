@@ -43,9 +43,9 @@ export class BasicChartComponent implements OnInit {
      .data(this.series())
       .join('path')
       .attr('fill', ({key}) => this.color()(key))
-        .attr('d', d => {
-         return this.area()(d);
-        })
+      .attr('d', d => {
+        return this.area()(d);
+      })
       .append('title')
         .text(({key}) => key);
 
@@ -103,7 +103,7 @@ export class BasicChartComponent implements OnInit {
 
   y = () => d3.scaleLinear()
     .domain([0, d3.max(this.series(), dd => d3.max(dd, d => d[1]))]).nice()
-    .range([this.height - this.margin.bottom, this.margin.top])
+    .range([this.height - this.margin.bottom - 200, this.margin.top])
 
   color = () =>  {
     return d3.scaleOrdinal()
@@ -112,7 +112,7 @@ export class BasicChartComponent implements OnInit {
   }
 
   xAxis = g => g
-    .attr('transform', `translate(0,${this.height - this.margin.bottom})`)
+    .attr('transform', `translate(0,${this.height - this.margin.bottom - 180})`)
     .call(d3.axisBottom(this.x()).ticks(this.width / 80).tickSizeOuter(0))
 
   yAxis = g => g
