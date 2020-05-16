@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ThreeJSSampleListPage } from './three-jssample-list.page';
 import { Basic3Component } from './components/basic3/basic3.component';
 import { LightsHemisphereComponent } from './components/lights-hemisphere/lights-hemisphere.component';
+import { ClothSimulationComponent } from './components/cloth-simulation/cloth-simulation.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
   }, {
     path: 'lights-hemisphere',
     component: LightsHemisphereComponent
+  }, {
+    path: 'cloth-simulation',
+    component: ClothSimulationComponent
   }
 ];
 

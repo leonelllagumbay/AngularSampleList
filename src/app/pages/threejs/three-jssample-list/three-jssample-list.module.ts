@@ -9,6 +9,7 @@ import { ThreeJSSampleListPageRoutingModule } from './three-jssample-list-routin
 import { ThreeJSSampleListPage } from './three-jssample-list.page';
 import { Basic3Component } from './components/basic3/basic3.component';
 import { LightsHemisphereComponent } from './components/lights-hemisphere/lights-hemisphere.component';
+import { ClothSimulationComponent } from './components/cloth-simulation/cloth-simulation.component';
 
 @NgModule({
   imports: [
@@ -17,6 +18,9 @@ import { LightsHemisphereComponent } from './components/lights-hemisphere/lights
     IonicModule,
     ThreeJSSampleListPageRoutingModule
   ],
-  declarations: [ThreeJSSampleListPage, Basic3Component, LightsHemisphereComponent]
+  declarations: [ThreeJSSampleListPage, Basic3Component,
+    LightsHemisphereComponent,
+    ClothSimulationComponent
+  ]
 })
 export class ThreeJSSampleListPageModule {}

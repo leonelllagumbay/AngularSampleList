@@ -2,7 +2,6 @@ import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular
 import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { userInfo } from 'os';
 
 @Component({
   selector: 'app-lights-hemisphere',
