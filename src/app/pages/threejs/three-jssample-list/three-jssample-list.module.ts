@@ -10,6 +10,7 @@ import { ThreeJSSampleListPage } from './three-jssample-list.page';
 import { Basic3Component } from './components/basic3/basic3.component';
 import { LightsHemisphereComponent } from './components/lights-hemisphere/lights-hemisphere.component';
 import { ClothSimulationComponent } from './components/cloth-simulation/cloth-simulation.component';
+import { LittlestTokyoComponent } from './components/littlest-tokyo/littlest-tokyo.component';
 
 @NgModule({
   imports: [
@@ -20,7 +21,8 @@ import { ClothSimulationComponent } from './components/cloth-simulation/cloth-si
   ],
   declarations: [ThreeJSSampleListPage, Basic3Component,
     LightsHemisphereComponent,
-    ClothSimulationComponent
+    ClothSimulationComponent,
+    LittlestTokyoComponent
   ]
 })
 export class ThreeJSSampleListPageModule {}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 
 @Component({
@@ -13,6 +13,7 @@ export class Basic3Component implements OnInit {
   camera: any;
   geometry: any;
   material: any;
+  @ViewChild('basicContainer', {static: true}) basicContainer: ElementRef;
   constructor() { }
 
   ngOnInit() {
@@ -34,7 +35,8 @@ export class Basic3Component implements OnInit {
 
     this.renderer = new THREE.WebGLRenderer( { antialias: true } );
     this.renderer.setSize( window.innerWidth, window.innerHeight );
-    document.body.appendChild( this.renderer.domElement );
+    const basicContainer = this.basicContainer.nativeElement;
+    basicContainer.appendChild( this.renderer.domElement );
   }
 
   animate = () => {
