@@ -1,0 +1,19 @@
+:host(a) {
+    color: #f00;
+}
+
+:host(.ac) {  /* prevent dat-gui from being selected */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+:host(.no-pointer-events) {
+    pointer-events: none;
+}
+
+:host(.control-disabled) {
+    color: #888;
+    text-decoration: line-through;
+}

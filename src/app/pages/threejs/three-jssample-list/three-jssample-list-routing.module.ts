@@ -6,6 +6,7 @@ import { Basic3Component } from './components/basic3/basic3.component';
 import { LightsHemisphereComponent } from './components/lights-hemisphere/lights-hemisphere.component';
 import { ClothSimulationComponent } from './components/cloth-simulation/cloth-simulation.component';
 import { LittlestTokyoComponent } from './components/littlest-tokyo/littlest-tokyo.component';
+import { SkeletalAnimationBlendingComponent } from './components/skeletal-animation-blending/skeletal-animation-blending.component';
 
 const routes: Routes = [
   {
@@ -23,6 +24,9 @@ const routes: Routes = [
   }, {
     path: 'littlest-tokyo',
     component: LittlestTokyoComponent
+  }, {
+    path: 'skeletal-animation-blending',
+    component: SkeletalAnimationBlendingComponent
   }
 ];
 

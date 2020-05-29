@@ -11,6 +11,7 @@ import { Basic3Component } from './components/basic3/basic3.component';
 import { LightsHemisphereComponent } from './components/lights-hemisphere/lights-hemisphere.component';
 import { ClothSimulationComponent } from './components/cloth-simulation/cloth-simulation.component';
 import { LittlestTokyoComponent } from './components/littlest-tokyo/littlest-tokyo.component';
+import { SkeletalAnimationBlendingComponent } from './components/skeletal-animation-blending/skeletal-animation-blending.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { LittlestTokyoComponent } from './components/littlest-tokyo/littlest-tok
   declarations: [ThreeJSSampleListPage, Basic3Component,
     LightsHemisphereComponent,
     ClothSimulationComponent,
-    LittlestTokyoComponent
+    LittlestTokyoComponent,
+    SkeletalAnimationBlendingComponent
   ]
 })
 export class ThreeJSSampleListPageModule {}
