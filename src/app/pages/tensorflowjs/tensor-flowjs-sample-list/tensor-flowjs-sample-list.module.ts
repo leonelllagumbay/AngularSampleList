@@ -10,6 +10,7 @@ import { TensorFlowjsSampleListPage } from './tensor-flowjs-sample-list.page';
 import { OfflineChatBotComponent } from './components/offline-chat-bot/offline-chat-bot.component';
 import { QuickSampleComponent } from './components/quick-sample/quick-sample.component';
 import { HttpClientModule } from '@angular/common/http';
+import { DicomViewerComponent } from './components/dicom-viewer/dicom-viewer.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,9 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     TensorFlowjsSampleListPageRoutingModule
   ],
-  declarations: [TensorFlowjsSampleListPage, OfflineChatBotComponent, QuickSampleComponent]
+  declarations: [TensorFlowjsSampleListPage,
+    OfflineChatBotComponent, QuickSampleComponent,
+    DicomViewerComponent
+  ]
 })
 export class TensorFlowjsSampleListPageModule {}

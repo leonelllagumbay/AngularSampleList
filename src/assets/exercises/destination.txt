@@ -865,6 +865,1259 @@ dns.resolve4(hostname[, options], callback)
 dns.resolve6(hostname[, options], callback) 
 dns.resolveAny(hostname, callback) 
 dns.resolveCname(hostname, callback)
+dns.resolveMx(hostname, callback)
+dns.resolvePtr(hostname, callback) 
+dns.resolveSoa(hostname, callback) 
+dns.resolveSrv(hostname, callback) 
+dns.resolveTxt(hostname, callback) 
+dns.reverse(ip, callback) 
+dns.setServers(servers) 
+DNS Promises API 
+
+Class: dnsPromises.Resolver 
+dnsPromises.getServers() 
+dnsPromises.lookup(hostname[, options]) 
+dnsPromises.lookupService(address, port) 
+dnsPromises.resolve(hostname[, rrtype]) 
+dnsPromises.resolve4(hostname[, options]) 
+dnsPromises.resovle6(hostname[, options]) 
+dnsPromises.resolveAny(hostname) 
+dnsPromises.resolveCname(hostname) 
+dnsPromises.resolveMx(hostname) 
+dnsPromises.resolveNaptr(hostname) 
+dnsPromises.resolveNs(hostname) 
+dnsPromises.resolvePtr(hostname) 
+dnsPromises.resolveSoa(hostname) 
+dnsPromises.resolveSrv(hostname) 
+dnsPromises.resolveText(hostname) 
+dnsPromises.reverse(ip) 
+dnsPromises.setServers(servers) 
+Error codes 
+Implementation considerations
+
+dns.lookup() 
+dns.resolve(), dns.resolve*() and dns.reverse()
+
+ECMASCript Modules 
+Introduction 
+Enabling 
+
+package.json "type" field 
+Package Scope and File Extensions 
+--input-type flag 
+Packages
+
+Package Entry Points 
+
+Main Entry Point Export 
+Subpath Exports 
+Exports Sugar 
+Conditional Exports 
+Nested Conditions 
+Self-referencing a package using its name 
+Dual CommonJS/ES Module Packages 
+
+Dual Package Hazard 
+Writing Dual Packages While Avoiding or Minimizing Hazards 
+
+Approach #1: Use an ES Module Wrapper 
+Approach #2: Isolate State 
+import Specifiers 
+
+Terminology
+
+data: Imports
+import.meta 
+Differences Between ES MOdules and CommonJS
+Mandatory file extentios
+
+No NODE_PATH 
+No require, exports, module.exports, __filename, __dirname 
+No require.resolve 
+No require.extensions 
+No require.cache 
+URL-based paths 
+Interoperability with CommonJS
+
+require 
+import statements 
+import() expressions
+CommonJS, JSON, and Native Modules 
+Builtin modules 
+Experimental JSON Modules 
+Experimental Wasm Modules 
+Experimental Loaders 
+
+Hooks 
+
+resolve hook 
+getFormat hook 
+getSource hook 
+transformSource hook 
+getGlobalPreloadCode hook 
+dynamicInstantiate hook 
+Examples 
+
+HTTPS loader 
+Transpiler loader 
+REsolution Algorithm 
+
+Features 
+Resolver Algorithm 
+Customizing ESM specifier resolution algorithm 
+
+Errors 
+
+Error Propagation and Interception 
+
+Error-first callbacks 
+Class: Error 
+
+new Error(message) 
+Error.captureStackTrace(targetObject[, constructorOpt]) 
+Error.stackTraceLimit 
+error.code 
+error.message 
+error.stack 
+Class: AssertionError 
+Class: RangeError 
+Class: ReferenceError 
+Class: SyntaxError 
+Class: SystemError 
+
+error.address 
+error.code 
+error.dest 
+error.errno 
+error.info 
+error.message 
+error.path 
+error.port 
+error.syscall 
+Common System Errors 
+Class: TypeError 
+Exceptions vs. Errors 
+OpenSSL Errors 
+
+error.opensslErrorStack 
+error.function 
+error.library 
+error.reason 
+Node.js Error Codes 
+
+ERR_AMBIGUOUS_ARGUMENT
+ERR_ARG_NOT_ITERABLE
+ERR_ASSERTION 
+ERR_ASYNC_CALLBACK 
+ERR_ASYNC_TYPE 
+ERR_BROTLI_COMPRESSION_FAILED
+ERR_BROTLI_INVALID_PARAM
+ERR_BUFFER_CONTEXT_NOT_AVAILABLE
+ERR_BUFFER_OUT_OF_BOUNDS
+ERR_BUFFER_TOO_LARGE
+ERR_CANNOT_WATCH_SIGINT 
+ERR_CHILD_CLOSED_BEFORE_REPLY 
+ERR_CHILD_PROCESS_IPC_REQUIRED
+ERR_CHILD_PROCESS_STDIO_MAXBUFFER
+ERR_CONSOLE_WRITABLE_STREAM
+ERR_CONTRUCT_CALL_REQUIRED
+ERR_CONTRUCT_CALL_INVALID 
+ERR_CPU_USAGE
+ERR_CRYPTO_CUSTOM_ENGINE_NOT_SUPPORTED
+ERR_CRYPTO_ECDH_INVALID_FORMAT
+ERRR_CRYPTO_ECDH_INVALID_PUBLIC_KEY
+ERR_CRYPTO_ENGINE_UNKNOWN
+ERR_CRYPTO_FIPS_FORCED
+ERR_CRYPTO_FIPS_UNAVAILABLE
+ERR_CRYPTO_HASH_FINALIZED
+ERR_CRYPTO_HASH_UPDATE_FAILED
+ERR_CRYPTO_INCOMPATIBLE_KEY_OPTIONS
+ERR_CRYPTO_INVALID_DIGEST 
+ERR_CRYPTO_INVALID_KEY_OBJECT_TYPE 
+ERR_CRYPTO_INVALID_STATE
+ERR_CRYPTO_PBKDF2_ERROR
+ERR_CRYPTO_SCRYPT_INVALID_PARAMETER
+ERR_CRYPTO_SCRYPT_NOT_SUPPORTED
+ERR_CRYPTO_SIGN_KEY_REQUIRED
+ERR_CRYPTO_TIMING_SAFE_EQUAL_LENGTH
+ERR_DIR_CLOSED
+ERR_DNS_SET_SERVERS_FAILED
+ERR_DOMAIN_CALLBACK_NOT_AVAILABLE
+ERR_DOMAIN_CANNOT_SET_UNCAUGHT_EXCEPTION_CAPTURE
+ERR_ENCODING_INVALID_ENCODED_DATA
+ERR_ENCODING_NOT_SUPPORTED
+ERR_FALSY_VALUE_REJECTION
+ERR_FS_FILE_TOO_LARGE
+ERR_FS_INVALID_SYMLINK_TYPE
+ERR_HTTP_HEADERS_SENT
+ERR_HTTP_INVALID_HEADER_VALUE
+ERR_HTTP_INVALID_STATUS_CODE
+ERR_HTTP_TRAILER_INVALID
+ERR_HTTP2_ALTSVC_INVALID_ORIGIN
+ERR_HTTP2_ALTSVC_LENGTH
+ERR_HTTP2_CONNECT_AUTHORITY
+ERR_HTTP2_CONNECT_PATH
+ERR_HTTP2_CONNECT_SCHEME
+ERR_HTTP2_ERROR
+ERR_HTTP2_GOAWAY_SESSION 
+ERR_HTTP2_HEADERS_AFTER_RESPOND
+ERR_HTTP2_HEADERS_SENT
+ERR_HTTP2_HEADER_SINGLE_VALUE 
+ERR_HTTP2_INFO_STATUS_NOT_ALLOWED
+ERR_HTTP2_INVALID_CONNECTION_HEADERS
+ERR_HTTP2_INVALID_HEADER_VALUE 
+ERR_HTTP2_INVALID_INFO_STATUS
+ERR_HTTP2_INVALID_ORIGIN 
+ERR_HTTP2_INVALID_PACKED_SETTINGS_LENGTH
+ERR_HTTP2_INVALID_PSEUDOHEADER 
+ERR_HTTP2_INVALID_SESSION
+ERR_HTTP2_INVALID_SETTING_VALUE
+ERR_HTTP2_INVALID_STREAM
+ERR_HTTP2_MAX_PENDING_SETTINGS_ACK
+ERR_HTTP2_NESTED_PUSH
+ERR_HTTP2_NO_SOCKET_MANIPULATION
+ERR_HTTP2_ORIGIN_LENGTH
+ERR_HTTP2_OUT_OF_STREAMS
+ERR_HTTP2_PAYLOAD_FORBIDDEN 
+ERR_HTTP2_PING_CANCEL 
+ERR_HTTP2_PING_LENGTH 
+ERR_HTTP2_PSEUDOHEADER_NOT_ALLOWED
+ERR_HTTP2_PUSH_DISABLED
+ERR_HTTP2_SEND_FILE
+ERR_HTTP2_SEND_FILE_NOSEEK
+ERR_HTTP2_SESSION_ERROR
+ERR_HTTP2_SETTINGS_CANCEL
+ERR_HTTP2_SOCKET_BOUND
+ERR_HTTP2_SOCKET_UNBOUND
+ERR_HTTP2_STATUS_101 
+ERR_HTTP2_STATUS_INVALID 
+ERR_HTTP2_STREAM_CANCEL
+ERR_HTTP2_STREAM_ERROR
+ERR_HTTP2_STREAM_SELF_DEPENDENCY
+ERR_HTTP2_TRAILERS_ALREADY_SENT
+ERR_HTTP2_TRAILERS_NOT_READY
+ERR_HTTP2_UNSUPPORTED_PROTOCOL
+ERR_INTERNAL_ASSERTION
+ERR_INCOMPATIBLE_OPTION_PAIR
+ERR_INPUT_TYPE_NOT_ALLOWED
+ERR_INSPECTOR_CLOSED
+ERR_INSPECTOR_COMMAND
+ERR_INSPECTOR_NOT_ACTIVE
+ERR_INSPECTOR_NOT_AVAILABLE
+ERR_INSPECTOR_NOT_CONNECTED
+ERR_INSPECTOR_NOT_WORKER
+ERR_INVALID_ADDRESS_FAMILY
+ERR_INVALID_ARG_TYPE
+ERR_INVALID_ARG_VALUE
+ERR_INVALID_ASYNC_ID
+ERR_INVALID_bUFFER_SIZE
+ERR_INVALID_CALLBACK
+ERR_INVALID_CHAR 
+ERR_INVALID_CURSOR_POS 
+ERR_INVALID_FD 
+ERR_INVALID_FD_TYPE
+ERR_INVALID_FILE_URL_HOST
+ERR_INVALID_FILE_URL_PATH 
+ERR_INVALID_HANDLE_TYPE
+ERR_INVALID_HTTP_TOKEN
+ERR_INVALID_IP_ADDRESS
+ERR_INVALID_MODULE_SPECIFIER
+ERR_INVALID_OPT_VALUE 
+ERR_INVALID_PACKAGE_CONFIG 
+ERR_INVALID_PACKAGE_TARGET 
+ERR_INVALID_PERFORMANCE_MARK
+ERR_INVALID_PROTOCOL
+ERR_INVALID_REPL_EVAL_CONFIG
+ERR_INVALID_REPL_INPUT
+ERR_INVALID_RETURN_PROPERTY
+ERR_INVALID_RETURN_VALUE
+ERR_INVALID_SYNC_FORK_INPUT
+ERR_INVALID_THIS
+ERR_INVALID_TRANSFER_OBJECT
+ERR_INVALID_TUPLE
+ERR_INVALID_URI 
+ERR_INVALID_URL 
+ERR_INVALID_URL_SCHEME 
+ERR_IPC_CHANNER_CLOSED 
+ERR_IPC_DISCONNECTED
+ERR_IPC_ONE_PIPE 
+ERR_IPC_SYNC_FORK
+ERR_MANIFEST_ASSERT_INTEGRITY
+ERR_MANIFEST_DEPENDENCY_MISSING
+ERR_MANIFEST_INTEGRITY_MISMATCH
+ERR_MANIFEST_INVALID_RESOURCE_FIELD
+ERR_MANIFEST_PARSE_POLICY
+ERR_MANIFEST_TDZ
+ERR_MANIFEST_UNKNOWN_ONERROR
+ERR_MEMORY_ALLOCATION_FAILED
+ERR_METHOD_NOT_IMPLEMENTED
+ERR_MISSING_ARGS
+ERR_MISSING_DYNAMIC_INSTANTIATE_HOOK
+ERR_MISSING_MESSAGE_PORT_IN_TRANSFER_LIST
+ERR_MISSING_PASSPHRASE 
+ERR_MISSING_PLATFORM_FOR_WORKER
+ERR_MODULE_NOT_FOUND
+ERR_MULTIPLE_CALLBACK
+ERR_NAPI_CONS_FUNCTION
+ERR_NAPI_INVALID_DATAVIEW_ARGS
+ERR_NAPI_INVALID_TYPEDARRAY_ALIGNMENT
+ERR_NAPI_INVALID_TYPEDARRAY_LENGTH
+ERR_NAPI_TSFN_CALL_JS
+ERR_NAPI_TSFN_GET_UNDEFINED
+ERR_NAPI_TSFN_START_IDLE_LOOP
+ERR_NAPI-TSFN_STOP_IDLE_LOOP
+ERR_NO_CRYPTO
+ERR_NO_ICU 
+ERR_NON_CONTEXT_AWARE_DISABLED 
+ERR_OUT_OF_RANGE 
+ERR_PACKAGE_PATH_NOT_EXPORTED
+ERR_REQUIRE_ESM
+ERR_SCRIPT_EXECUTION_INTERRUPTED
+ERR_SCRIPT_EXECUTION_TIMEOUT
+ERR_SERVER_ALREADY_LISTEN
+ERR_SERVER_NOT_RUNNING 
+ERR_SOCKET_ALREADY_BOUND
+ERR_SOCKET_BAD_BUFFER_SIZE
+ERR_SOCKET_BAD_PORT 
+ERR_SOCKET_BUFFER_SIZE 
+ERR_SOCKET_CANNOT_SEND 
+ERR_SOCKET_CLOSED 
+ERR_SOCKET_DGRAM_IS_CONNECTED 
+ERR_SOCKET_DGRAM_NOT_CONNECTED
+ERR_SOCKET_DGRAM_NOT_RUNNING 
+ERR_SRI_PARSE 
+ERR_STREAM_CANNOT_PIPE
+ERR_STREAM_DESTROYED 
+ERR_STREAM_NULL_VALUES 
+ERR_STREAM_PREMATURE_CLOSE 
+ERR_STREAM_PUSH_AFTER_END_EVENT 
+ERR_STREAM_WRAP 
+ERR_STREAM_WRITE_AFTER_END 
+ERR_STRING_TOO_LONG 
+ERR_SYNTHETIC 
+ERR_SYSTEM_ERROR 
+ERR_TLS_CERT_ALTNAME_INVALID 
+ERR_TLS_DH_PARAM_SIZE 
+ERR_TLS_HANDSHAKE_TIMEOUT 
+ERR_TLS_INVALID_PROTOCOL_METHOD 
+ERR_TLS_INVALID_PROTOCOL_VERSION
+ERR_TLS_PROTOCOL_VERSION_CONFLICT 
+ERR_TLS_RENEGOTIATION_DISABLED 
+ERR_TLS_REQUIRED_SERVER_NAME 
+ERR_TLS_SESSION_ATTACK 
+ERR_TLS_SNI_FROM_SERVER 
+ERR_TLS_PSK_SET_IDENTITY_HINT_FAILED 
+ERR_TRACE_EVENTS_CATEGORY_REQUIRED 
+ERR_TRACE_EVENTS_UNAVAILABLE 
+ERR_TRANSFERRING_EXTERNALIZED_SHAREDARRAYBUFFER
+ERR_TRANSFORM_ALREADY_TRANSFORMING 
+ERR_TRANSFORM_WITH_LENGTH_0 
+ERR_TTY_INIT_FAILED 
+ERR_UNCAUGHT_EXCEPTION_CAPTURE_ALREADY_SET
+ERR_UNESCAPED_CHARACTERS
+ERR_UNHANDLED_ERROR 
+ERR_UNKNOWN_BUILDIN_MODULE 
+ERR_UNKNOWN_CREDENTIAL 
+ERR_UNKNOWN_ENCODING 
+ERR_UNKNOWN_FILE_EXTENSION
+ERR_UNKNOWN_MODULE_FORMAT 
+ERR_UNKNOWN_SIGNAL 
+ERR_UNSUPPORTED_ESM_URL_SCHEME
+ERR_V8BREAKITERATOR 
+ERR_VALID_PERFORMANCE_ENTRY_TYPE 
+ERR_VM_DYNAMIC_IMPORT_CALLBACK_MISSING 
+ERR_VM_MODULE_ALREADY_LINKED 
+ERR_VM_MODULE_DIFFERENT_CONTEXT 
+ERR_VM_MODULE_LINKING_ERRORED 
+ERR_VM_MODULE_NOT_MODULE 
+ERR_VM_MODULE_STATUS 
+ERR_WASI_ALREADY_STARTED 
+ERR_WORKER_INIT_FAILED 
+ERR_WORKER_INVALID_EXEC_ARGV
+ERR_WORKER_OUT_OF_MEMORY 
+ERR_WORKER_PATH 
+ERR_WORKER_UNSERIALIZABLE_ERROR 
+ERR_WORKER_UNSUPPORTED_EXTENSION 
+ERR_WORKER_UNSUPPORTED_OPERATION 
+ERR_ZLIB_INITIALIZATION_FAILED 
+HPE_HEADER_OVERFLOW 
+MODULE_NOT_FOUND 
+Legacy Node.js Error Codes 
+
+ERR_CANNOT_TRANSFER_OBJECT
+ERR_CLOSED_MESSAGE_PORT 
+ERR_CRYPTO_HASH_DIGEST_NO_UTF16 
+ERR_HTTP2_FRAME_ERROR 
+ERR_HTTP2_HEADERS_OBJECT 
+ERR_HTTP2_INFO_HEADERS_AFTER_RESPOND 
+ERR_HTTP2_STREAM_CLOSED 
+ERR_HTTP_INVALID_CHAR 
+ERR_INDEX_OUT_OF_RANGE 
+ERR_NAPI_CONS_PROTOTYPE_OBJECT 
+ERR_NO_LONGER_SUPPORTED 
+ERR_OUTOFMEMORY 
+ERR_PARSE_HISTORY_DATA 
+ERR_STDERR_CLOSE 
+ERR_STREAM_READ_NOT_IMPLEMENTED 
+ERR_TLS_RENEGOTIATION_FAILED 
+ERR_UNKNOWN_BUILTIN_MODULE 
+ERR_UNKNOWN_STDIN_TYPE 
+ERR_UNKNOWN_STREAM_TYPE 
+ERR_VALUE_OUT_OF_RANGE 
+ERR_VM_MODULE_NOT_LINKED 
+ERR_ZLIB_BINDING_CLOSED 
+
+other error codes 
+
+ERR_ENTRY_TYPE_MISMATCH 
+ERR_FS_WATCHER_ALREADY_STARTED 
+ERR_FS_WATCHER_NOT_STARTED 
+ERR_HTTP2_ALREADY_SHUTDOWN 
+ERR_HTTP2_ERROR 
+ERR_INVALID_REPL_HISTORY 
+ERR_INVALID_REPL_TYPE 
+ERR_MISSING_DYNAMIC_INSTANTIATE_HOOK 
+ERR_STREAM_HAS_STRINGDECODER 
+ERR_STRING_TOO_LARGE 
+ERR_TTY_WRITABLE_NOT_READABLE 
+
+Events 
+
+Passing arguments and this to listeners 
+Asynchronous vs. Synchronous 
+Handling events only once 
+Error events 
+Capture Rejections of Promises 
+Class: EventEmitter 
+
+Event: 'newListener' 
+Event: 'removeLister'
+EventEmitter.listenerCount(emitter, eventName) 
+EventEmitter.defaultMaxListeners 
+emitter.addListener(eventName, listener) 
+emitter.emit(eventName[, ...args]) 
+emitter.eventNames() 
+emitter.getMaxListeners() 
+emitter.listenerCount(eventName) 
+emitter.listeners(eventName) 
+emitter.off(eventName, listener) 
+emitter.on(eventName, listener) 
+emitter.once(eventName, listener) 
+emitter.prependListener(eventName, listener) 
+emitter.prependOnceListener(eventName, listener) 
+emitter.removeAllListener(eventName, listener) 
+emitter.removeListener(eventName, listener) 
+emitter.setMaxListeners(n) 
+emitter.rawListeners(eventName) 
+emitter[Symbol.for('nodejs.rejection')](err, eventName[, ...arg])
+events.once(emitter, name) 
+events.captureRejections 
+events.captureRejectionSymbol 
+events.captureRejectionSymbol 
+events.on(emitter, eventName) 
+
+File System 
+
+File paths 
+
+URL object support 
+File Descriptors 
+Threadpool Usage 
+Class fs.Dir 
+
+dir.close() 
+dir.close(callback) 
+dir.closeSync() 
+dir.path 
+dir.read() 
+dir.read(callback) 
+dir.readSync() 
+dir[Symbol.asyncIterator]() 
+Class: fs.Dirent 
+
+dirent.isBlockDevice() 
+dirent.isCharacterDevice() 
+dirent.isDirectory() 
+dirent.isFIFO() 
+dirent.isFile() 
+dirent.isSocket() 
+dirent.isSymbolicLink() 
+dirent.name 
+Class: fs.FSWatcher 
+
+Event: 'change'
+Event: 'close'
+EVent: 'error' 
+watcher.close() 
+Class: fs.ReadStream 
+
+Event: 'close' 
+Event: 'open' 
+Event: 'ready' 
+readStream.bytesRead 
+readStream.path 
+readStream.pending 
+Class: fs.Stats 
+
+stats.isBlockDevice() 
+stats.isCharacterDevice() 
+stats.isDirectory() 
+stats.isFIFO() 
+stats.isFile() 
+stats.isSocket() 
+stats.isSymbolicLink() 
+stats.dev 
+stats.ino 
+stats.mode 
+stats.nlink 
+stats.uid 
+stats.gid 
+stats.rdev 
+stats.size 
+stats.blksize 
+stats.blocks 
+stats.atimeMs 
+stats.mtimeMs 
+stats.ctimeMs 
+stats.birthtimeMs 
+stats.atimeNs 
+stats.mtimeNs 
+stats.ctimeNs 
+stats.birthtimeNs
+stats.atime 
+stats.mtime 
+stats.ctime 
+stats.birthtime 
+Stat Time Values 
+Class: fs.WriteStream 
+
+Event: 'close'
+Event: 'open'
+Event: 'ready'
+writeStream.bytesWritten 
+writeStream.path 
+writeStream.pending 
+fs.access(path[, model], callback) 
+fs.accessSync(path[, mode]) 
+fs.appendFile(path, data[, options]) 
+fs.chmod(path, mode, callback) 
+
+File modes 
+fs.chmodSync(path, mode) 
+fs.chown(path, uid, gid, callback) 
+fs.chownSync(path, uid, gid) 
+fs.close(fd, callback) 
+fs.closeSync(fd) 
+fs.constants 
+fs.copyFile(src, dest[, flags], callback) 
+fs.copyFileSync(src, dest[, flags]) 
+fs.createReadStream(path[, options]) 
+fs.exists(path, callback) 
+fs.existsSync(path) 
+fs.fchmod(fd, mode, callback) 
+fs.fchmodSync(fd, mode) 
+fs.fchown(fd, uid, gid, callback) 
+fs.fchownSync(fd, uid, gid) 
+fs.fdatasync(fd, callback) 
+fs.fdatasyncSync(fd) 
+fs.fstat(fd[, options], callback) 
+fs.fstatSync(fd[, options]) 
+fs.fsync(fd, callback) 
+fs.fsyncSync(fd) 
+fs.ftruncate(fd[, len], callback) 
+fs.truncateSync(fd[, len]) 
+fs.futimes(fd, atime, mtime, callback) 
+fs.tutimesSync(fd, atime, mtime) 
+fs.lchmod(path, mode, callback) 
+fs.lchmodSync(path, mode) 
+fs.lchown(path, uid, gid, callback) 
+fs.lchownSync(path, uid, gid) 
+fs.link(existingPath, newPath, callback) 
+fs.linkSync(existingPath, newPath) 
+fs.lstat(path[, options], callback) 
+fs.lstatSync(path[, options]) 
+fs.mkdir(path[, options], callback) 
+fs.mkdirSync(path[, options]) 
+fs.mkdtemp(prefix[, options], callback) 
+fs.mkdtemSync(prefix[, options]) 
+fs.open(path[, flags[, model]], callback) 
+fs.opendir(path[, options], callback) 
+fs.opendirSync(path[, options]) 
+fs.openSync(path[, flags, mode]) 
+fs.read(fd, bufer, offset, length, position, callback) 
+fs.readdir(path[, options], callback) 
+fs.readdirSync(path[, options]) 
+fs.readFile(path[, options], callback) 
+
+File Descriptors 
+fs.readFileSync(path[, options]) 
+fs.readlin(path[, options], callback) 
+fs.readlinkSync(paht[, options]) 
+fs.readSync(fd, buffer, offset, length, position) 
+fs.realpath(path[, options], callback) 
+fs.realpath.native(path[, options], callback) 
+fs.realpathSync(path[, options]) 
+fs.realpathSync.native(path[, options]) 
+fs.rename(oldPath, newPath, callback) 
+fs.renameSync(oldPath, newPath) 
+fs.rmdir(path[, options], callback) 
+fs.rmdirSync(path[, options]) 
+fs.stat(path[, options], callback) 
+fs.statSync(path[, options]) 
+fs.symlink(target, path[, type], callback) 
+fs.symlinkSync(target, path[, type]) 
+fs.truncate(path[, len], callback) 
+fs.truncateSync(path[, len])
+fs.unlink(path, callback) 
+fs.unlinkSync(path) 
+fs.unwatchFile(filename[, listener]) 
+fs.utimes(path, atime,mtime, callback) 
+fs.utimesSync(path, atime, mtime) 
+fs.watch(filename[, options][, listener]) 
+
+Caveats
+
+Availability 
+Inodes 
+Filename Argument 
+fs.watchFile(filename[, options], listener) 
+fs.write(fd, buffer[, offset[, length [, position]]], callback) 
+fs.write(fd, string [, position[, encoding]], callback) 
+fs.writeFile(file, data[, options], callback)
+
+Using fs.writeFile() with File Descriptors 
+fs.writeFileSync(file, data[, options]) 
+fs.writeSync(fd, buffer[, offset[, length[, position]]])
+fs.writeSync(fd, string[, position[, encoding]]) 
+fs.writev(fd, buffers[, position], callback) 
+fs.writevSync(fd, buffers[, position]) 
+fs Promises API 
+
+class FileHandle 
+
+filehandle.appendFile(data, options) 
+filehandle.chmod(mode) 
+filehandle.chown(uid, gid) 
+filehandle.close() 
+filehandle.datasync() 
+filehandle.fd 
+filehandle.read(buffer, offset, length, position) 
+filehandle.readFile(options) 
+filehandle.stat([options]) 
+filehandle.sync() 
+filehandle.truncate(len) 
+filehandle.uties(atime, mtime) 
+filehandle.write(buffer[, offset[, length[, position]]]) 
+fielhandle.write(string[, position[, encoding]]) 
+filehanlde.writeFile(data, options) 
+filehandle.writev(buffers[, position])
+filehanlde.access(path[, mode]) 
+fsPromises.acess(path[, mode])
+fsPromises.appendFile(path, data[, options]) 
+fsPromises.chmod(path, mode) 
+fsPromises.chown(path, uid, gid) 
+fsPromises.copyFile(src, dest[, flags]) 
+fsPromises.lchmod(path, mode) 
+fsPromises.lchown(path, uid, gid) 
+fsPromises.link(existingPath, newPath) 
+fsPromises.lstat(path[, options]) 
+fsPromises.mkdir(path[, options]) 
+fsPromises.mkdtemp(prefix[, options]) 
+fsPromises.open(path, flags[, mode]) 
+fsPromises.opendir(path[, options]) 
+fsPromises.readdir(path[, options]) 
+fsPromises.readFile(path[, options]) 
+fsPromises.readlink(path[, options]) 
+fsPromises.realpath(path[, options]) 
+fsPromises.rename(oldPath, newPath) 
+fsPromises.rmdir(path[, options]) 
+fsPromises.stat(path[, options]) 
+fsPromises.symlink(target, path[, type]) 
+fsPromises.truncate(path[, len]) 
+fsPromise.unlink(path) 
+fsPromises.utimes(path, atime, mtime) 
+fsPromises.writeFile(file, data[, options]) 
+FS Constants 
+
+File Access Constants 
+File Copy Constants 
+File Open Constants 
+File Type Constants 
+File Mode Constants 
+File System Flags 
+
+Class: Buffer 
+__dirname 
+__filename 
+clearImmediate(immediateObject) 
+clearInterval(intervalObject) 
+clearTimeout(timeoutObjects) 
+console 
+exports 
+global 
+module 
+process 
+queueMicrotask(callback) 
+require() 
+setImmediate(callback[, ...args]) 
+setInterval(callback, delay[, ...args]) 
+setTimeout(callback, delay[, ...args]) 
+TextDecoder 
+TextEncoder 
+URL 
+URLSearchParams 
+WebAssembly
+
+HTTP 
+
+Class: http.Agent 
+
+new Agent([options]) 
+agent.createConnection(option[, callback]) 
+agent.keepSocketAlive(socket) 
+agent.reuseSocket(socket, request) 
+agent.destroy() 
+agent.freeSockets 
+agent.getName(options) 
+agent.maxFreeSockets 
+agent.maxSockets 
+agent.requests 
+agent.sockets 
+Class: http.ClientRequest 
+
+Event: 'abort'
+Event: 'connect' 
+Event: 'continue' 
+Event: 'information' 
+Event: 'response' 
+Event: 'socket' 
+Event: 'timeout' 
+Event: 'upgrade' 
+request.abort() 
+request.aborted
+request.connection 
+request.end([data[, encoding]][, callback])
+request.finished 
+request.flushHeaders() 
+request.getHeader(name) 
+request.maxHeadersCount 
+request.path 
+request.removeHeader(name) 
+request.reuseSocket 
+request.setHeader(name, value) 
+request.setNoDelay([noDelay]) 
+request.setSocketKeepAlive([enable][, initialDelay]) 
+request.setTimeout(timeout[, callback]) 
+request.socket 
+request.writableEnded 
+request.writableFinished 
+request.write(chunk[, encoding][, callback]) 
+Class: http.Server 
+
+Event: 'checkContinue' 
+Event: 'checkExpectation' 
+Event: 'clientError' 
+Event: 'close' 
+Event: 'connect' 
+Event: 'connection' 
+Event: 'request' 
+Event: 'upgrade' 
+server.close([callback]) 
+server.headersTimeout 
+server.listen() 
+server.listening 
+server.maxHeadersCount 
+server.setTimeout([msecs][, callback]) 
+server.timeout 
+server.keepAliveTimeout 
+Class: http.ServerResponse 
+
+
+
+Event: 'close' 
+Event: 'finish' 
+response.addTrailers(headers) 
+resposne.connection 
+response.cork() 
+resposne.end([data[, encoding]][, callback]) 
+response.finished 
+resonse.flushHeaders() 
+response.getHeader(name) 
+response.getHeaderNames() 
+resposne.getHeaders() 
+response.hasHeader(name) 
+response.hheadersSent 
+response.removeHeader(name) 
+response.sendate 
+response.setHeader(name, value) 
+response.setTimeout(msecs)
+response.socket 
+response.statusCode 
+response.statusMessage 
+resposne.uncork() 
+response.writableEnded 
+response.writableFinished 
+response.write(chunk[, encoding][, callback]) 
+response.writeContinue() 
+resposne.writeHead(statusCode[, statusMessage][, headers]) 
+response.writeProcessing() 
+Class: http.IncomingMessage 
+
+Event: 'aborted' 
+Event: 'close' 
+message.aborted 
+message.complete 
+message.destroy([error]) 
+message.headers 
+message.httpVersion 
+message.method 
+message.rawHeaders 
+message.rawTrailers 
+message.setTimeout(msecs[, callback]) 
+message.socket 
+message.statusCode 
+message.statusMessage
+message.trailers 
+message.url 
+http.METHODS 
+http.STATUS_CODES 
+http.createServer([options][, requestListener]) 
+http.get(options[, callback]) 
+http.get(url[, options][, callback])
+http.globalAgen
+http.maxHeaderSize 
+http.request(options[, callback]) 
+http.request(url[, options][, callback]) 
+
+HTTP/2
+
+HTTP/2
+Server-side example 
+Client-side example
+Class: Http2Session 
+
+Http2Session and Sockets 
+Event: 'close' 
+Event: 'connect' 
+Event: 'error' 
+Event: 'frameError' 
+Event: 'goaway' 
+Event: 'localSettings' 
+Event: 'ping' 
+Event: 'remoteSettings' 
+Event: 'timeout' 
+http2session.alpnProtocol 
+http2session.close([callback]) 
+http2session.closed 
+http2session.connecting 
+http2session.destroy([error][, code]) 
+http2session.destroyed 
+http2session.encrypted 
+http2session.goaway([code[, lastStreamID[, opaqueData]]]) 
+http2session.localSettings 
+http2session.originSet 
+http2session.pendingSettingsAck 
+http2session.ping([payload, ]callback) 
+http2session.ref() 
+http2session.remoteSettings 
+http2session.setTimeout(msecs, callback) 
+http2session.socket 
+http2session.state 
+http2session.settings([settings][, callback]) 
+http2session.type 
+http2session.unref() 
+Class: ServerHttp2Session 
+
+serverhttp2session.altsvc(alt, originOrStream) 
+Specifying alternative services
+serverhttp2session.origin(...origins) 
+Class: ClientHttp2Session
+
+Event: 'altsvc'
+Event: 'origin'
+clienthttp2session.request(headers[, options]) 
+Class: Http2Stream 
+
+Http2Stream Lifecycle 
+
+Creation 
+Destruction 
+Event: 'aborted' 
+Event: 'close'
+Event: 'error' 
+Event: 'frameError' 
+Event: 'timeout' 
+Event: 'trailers' 
+Event: 'wantTailers'
+http2stream.aborted 
+http2stream.bufferSize 
+http2stream.close(code[, callback]) 
+http2stream.closed 
+http2stream.destroyed 
+http2stream.endAfterHeaders 
+http2stream.id 
+http2stream.pending 
+http2stream.priority(options) 
+http2stream.rstCode 
+http2stream.sentHeaders 
+http2stream.sentInfoHeaders 
+http2stream.sentTrailers 
+http2stream.session 
+http2stream.setTimeout(msecs, callback) 
+http2stream.state 
+http2stream.sendTrailers(headers) 
+Class: ClientHttp2Stream
+
+Event: 'continue' 
+Event: 'headers' 
+Event: 'push'
+Event: 'response' 
+Class: ServerHttp2Stream 
+
+http2stream.additionalHeaders(headers) 
+http2stream.headersSent 
+http2stream.pushAllowed 
+http2stream.pushStream(headers[, options], callback) 
+http2stream.respond([headers[, options]]) 
+http2stream.respondWithFD(fd[, headers[, options]]) 
+http2stream.respondWithFile(pah[, headers[, options]]) 
+Class: Http2Server 
+
+Event: 'checkContinue' 
+Event: 'request' 
+Event: "session"
+Event: 'sessionError' 
+Event: 'stream' 
+Event: 'timeout' 
+server.close([callback]) 
+server.setTimeout([msecs][, callback]) 
+Class: Http2SecureServer 
+
+Event: 'checkContinue' 
+Event: 'request' 
+Event: 'session' 
+Event: 'sessionError' 
+Event: 'stream' 
+Event: 'timeout' 
+Event: 'unknownProtocol'
+server.close([callback]) 
+server.setTimeout([msecs][, callback]) 
+http2.createServer(options[, onRequestHandler]) 
+http2.createSecureServer(options[, onRequestHandler]) 
+http2.connect(authority[, options][, listener]) 
+http2.constants 
+
+Error Codes for RST_STREAM and GOAWAY 
+http2.getDefaultSettings() 
+http2.getPackedSettings([settings]) 
+http2.getUnpackedSettings(buf) 
+Headers Object 
+Settings object 
+Using options.selectPadding() 
+Error Handling 
+Invalid character handling in header names and values 
+Push streams on the client 
+Supporting the CONNECT method 
+The extended CONNECT Protocol 
+Compatibility API 
+
+ALPN negotiation 
+Class: http2.Http2ServerRequest 
+
+Event: 'aborted' 
+Event: 'close' 
+request.aborted 
+request.authority 
+request.complete 
+request.destroy([error]) 
+request.headers 
+request.httpVersion 
+request.method 
+request.rawHeaders 
+request.rawTrailers 
+request.scheme 
+request.setTimeout(msecs, callback) 
+request.socket 
+request.stream 
+request.trailers 
+request.url 
+Class: http2.Http2ServerResponse 
+
+Event: 'close' 
+Event: 'finish' 
+response.addTrailers(headers) 
+response.connection 
+response.end([data[, encoding[[[, callback]]]]])
+response.finished 
+response.getHeader(name) 
+response.getHeaderNames() 
+response.hasHeader(name) 
+response.headersSent 
+response.removeHeader(name) 
+response.sendDate 
+response.setHeader(name, value) 
+response.setTimeout(msecs[, callback]) 
+response.socket 
+response.statusCode 
+response.statusMessage 
+response.stream 
+response.writableEnded 
+response.write(chunk[, encoding][, callback])
+response.writeContinue() 
+response.writeHead(statusCode[, statusMessage][, headers])
+response.createPushResponse(headers, callback) 
+Collecting HTTP/2 Performance Metrics 
+
+HTTPS 
+
+Class: https.Agent 
+
+new Agent([options]) 
+
+Event: 'keylog' 
+Class: https.Server 
+
+server.close([callback])  
+server.headersTimeout 
+server.listen() 
+server.maxHeadersCount 
+server.setTimeout([msecs][, requestListener]) 
+server.timeout 
+server.keepAliveTimeout 
+https.createServer([options][, requestListener]) 
+https.get(optiosn[, callback]) 
+https.get(url[, optios][, callback]) 
+https.globalAgent 
+https.request(options[, callback])
+https.request(url[, options][, callback]) 
+
+Inspector 
+
+inspector.close() 
+inspector.console()
+inspector.open([port[, host[, wait]]]) 
+inspector.url() 
+inspector.waitForDebugger() 
+Class: inspector.Session 
+
+Contructor: new inspector.Session() 
+Event: 'inspectorNotification' 
+Event: <inspector-protocol-method>;
+session.connect() 
+session.connectToMainThread() 
+session.disconnect() 
+session.post(method[, params][, callback]) 
+Example usage 
+
+CPU Profiler 
+Heap Profiler 
+
+Internationalization Support 
+
+Options for building Node.js 
+
+Disable all internationalization features (none) 
+Build with a pre-installed ICU (system-icu) 
+Embed a limited set of ICU data (small-icu) 
+
+Providing ICU data at runtime 
+Embed the entire ICU (full-ICU) 
+Detecting internationalization support 
+
+const hasFullICU = (() => {
+    try {
+        const january = new Data(9e8);
+        const spanish = new Intl.DateTimeFormat('es', {month: 'lo})
+        return spanish.format(january) === 'enero';
+    } catch (err) {
+        return false;
+    }
+})()
+
+Modules 
+
+Accessing the main module 
+Addenda: Package Manager Tips 
+Addenda: The .mjs extension 
+All Together...
+Caching 
+
+Module Caching Caveats 
+Core Modules 
+Cycles 
+File Modules 
+Folders as Modules 
+Loading from node_modules folders 
+Loading from the global folders 
+The module wrapper 
+The module scope 
+
+__dirname 
+__filename 
+exports 
+module 
+require(id) 
+
+require.cache 
+require.extensions 
+require.main 
+require.resolve(request[, options])
+
+require.resolve.paths(request) 
+The module Object 
+
+module.children 
+module.exports 
+
+exports shortcut 
+module.filename 
+module.id 
+module.loaded 
+module.parent 
+module.paths 
+module.require(id) 
+The Module Object 
+
+module.builtinModules 
+module.createRequire(filename) 
+module.createRequireFromPath(filename) 
+module.syncBuiltinESMExports() 
+
+// Assigning to exports will not modify module, must use module 
+module.exports = class Square {
+    constructor(width) {
+        this.width = width;
+    }
+
+    area() {
+        return this.width ** 2;
+    };
+
+    const circle = require('./circle.js');
+
+}
+
+Net 
+
+IPC Support 
+
+Identifying paths for IPC connections 
+Class: net.Server 
+
+new net.Server([options][, connectionListener]) 
+Event: 'close'
+Event: 'connection' 
+Event: 'error' 
+Event: 'listening' 
+server.address() 
+server.close([callback]) 
+server.connections 
+server.getConnections(callback) 
+server.listen() 
+
+server.listen(handle[, backlog][, callback]) 
+server.listen(options[, callback]) 
+server.listen(pah[, backlog][, callback]) 
+server.listen([port[, host[, backlog]]][, callback]) 
+server.listening 
+server.maxConnections 
+server.ref() 
+server.unref() 
+Class: net.Socket 
+
+new net.Socket([options]) 
+Event: 'close' 
+Event: 'connect' 
+Event: 'data'
+Event: 'end' 
+Event: 'error' 
+Event: 'lookup' 
+Event: 'ready' 
+Event: 'timeout' 
+socket.address() 
+socket.bufferSize
+socket.byteRead 
+socket.bytesWritten 
+socket.connect() 
+
+socket.connect(options[, connectListener]) 
+socket.connect(path[, connectListener]) 
+socket.connect(port[, host][, connectListener]) 
+socket.connecting 
+socket.destroy([exception]) 
+socket.destroyed 
+socket.end([data[, encoding]][, callback]) 
+socket.localAddress 
+socket.localPort 
+socket.pause() 
+socket.pending 
+socket.ref() 
+socket.remoteAddress 
+socket.remoteFamily 
+socket.remotePort 
+socket.resume() 
+socket.setEncoding([encoding]) 
+socket.setKeepAlive([enable][, initialDelay])
+socket.setNoDelay([noDeley]) 
+socket.setTimeout(timeout[, callback]) 
+socket.unref() 
+socket.write(data[, encoding][, callback]) 
+net.connect() 
+
+net.connect(options[, connectListener]) 
+net.connect(path[, connectListener]) 
+net.connect(port[, host][, connectListener]) 
+net.createConnection() 
+
+net.createConnection(optons[, connectListener]) 
+net.createConnection(path[, connectListener]) 
+net.createConnection(port[, host][, connectListener]) 
+net.createServer([options][, connectionListener]) 
+net.isIP(input) 
+net.isIPv4(input) 
+net.isIPv6(input) 
+
+OS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

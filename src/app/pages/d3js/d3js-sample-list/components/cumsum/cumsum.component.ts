@@ -102,5 +102,5 @@ export class CumsumComponent implements OnInit {
 
   y = () => (d3 as any).scaleLinear()
     .domain(d3.extent(this.data, (d: any) => d.y))
-    .rangeRound([(this.height / 2) - this.margin.bottom, this.margin.top])
+    .rangeRound([(this.height) - this.margin.bottom - 50, this.margin.top])
 }
