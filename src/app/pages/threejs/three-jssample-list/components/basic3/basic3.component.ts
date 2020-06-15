@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, OnDestroy } from '@angular/core';
 import * as THREE from 'three';
 
 @Component({
@@ -6,19 +6,24 @@ import * as THREE from 'three';
   templateUrl: './basic3.component.html',
   styleUrls: ['./basic3.component.scss'],
 })
-export class Basic3Component implements OnInit {
+export class Basic3Component implements OnInit, OnDestroy {
   mesh: any;
   renderer: any;
   scene: any;
   camera: any;
   geometry: any;
   material: any;
+  container;
   @ViewChild('basicContainer', {static: true}) basicContainer: ElementRef;
   constructor() { }
 
   ngOnInit() {
     this.init();
     this.animate();
+  }
+
+  ngOnDestroy() {
+    this.container.innerHTML = '';
   }
 
   init() {
@@ -35,8 +40,8 @@ export class Basic3Component implements OnInit {
 
     this.renderer = new THREE.WebGLRenderer( { antialias: true } );
     this.renderer.setSize( window.innerWidth, window.innerHeight );
-    const basicContainer = this.basicContainer.nativeElement;
-    basicContainer.appendChild( this.renderer.domElement );
+    this.container = this.basicContainer.nativeElement;
+    this.container.appendChild( this.renderer.domElement );
   }
 
   animate = () => {

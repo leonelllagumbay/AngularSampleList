@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -8,7 +8,7 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
   templateUrl: './lights-hemisphere.component.html',
   styleUrls: ['./lights-hemisphere.component.scss'],
 })
-export class LightsHemisphereComponent implements OnInit {
+export class LightsHemisphereComponent implements OnInit, OnDestroy {
   camera: any;
   scene: any;
   renderer: any;
@@ -19,7 +19,8 @@ export class LightsHemisphereComponent implements OnInit {
   mixers = [];
   stats: any;
   clock = new THREE.Clock();
-  @ViewChild('container', {static: true}) container: ElementRef;
+  container;
+  @ViewChild('container', {static: true}) cont: ElementRef;
 
   constructor() { }
   @HostListener('window:resize', ['$event'])
@@ -31,8 +32,12 @@ export class LightsHemisphereComponent implements OnInit {
     this.animate();
   }
 
+  ngOnDestroy() {
+    this.container.innerHTML = '';
+  }
+
   init() {
-    const container = this.container.nativeElement;
+    this.container = this.cont.nativeElement;
 
     this.camera = new THREE.PerspectiveCamera( 30, window.innerWidth / window.innerHeight, 1, 5000 );
     this.camera.position.set( 0, 0, 250 );
@@ -175,14 +180,14 @@ export class LightsHemisphereComponent implements OnInit {
     this.renderer = new THREE.WebGLRenderer( { antialias: true } );
     this.renderer.setPixelRatio( window.devicePixelRatio );
     this.renderer.setSize( window.innerWidth, window.innerHeight );
-    container.appendChild( this.renderer.domElement );
+    this.container.appendChild( this.renderer.domElement );
     this.renderer.outputEncoding = THREE.sRGBEncoding;
     this.renderer.shadowMap.enabled = true;
 
     // STATS
 
     this.stats = Stats();
-    container.appendChild( this.stats.dom );
+    this.container.appendChild( this.stats.dom );
   }
 
   toggleHemisphereLight() {

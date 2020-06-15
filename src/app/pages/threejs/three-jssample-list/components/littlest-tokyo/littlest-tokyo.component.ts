@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, HostListener, OnDestroy } from '@angular/core';
 import * as THREE from 'three';
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
@@ -10,7 +10,7 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
   templateUrl: './littlest-tokyo.component.html',
   styleUrls: ['./littlest-tokyo.component.scss'],
 })
-export class LittlestTokyoComponent implements OnInit {
+export class LittlestTokyoComponent implements OnInit, OnDestroy {
   scene: any;
   camera: any;
   pointLight: any;
@@ -33,6 +33,10 @@ export class LittlestTokyoComponent implements OnInit {
     this.stats = Stats();
     this.container.appendChild(this.stats.dom);
     this.init();
+  }
+
+  ngOnDestroy() {
+    this.container.innerHTML = '';
   }
 
   init() {

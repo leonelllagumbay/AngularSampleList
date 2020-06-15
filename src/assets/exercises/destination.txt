@@ -2079,6 +2079,564 @@ net.isIPv6(input)
 
 OS 
 
+os.EOL 
+os.arch() 
+os.constants 
+os.cpus() 
+os.endianness() 
+os.freemen() 
+os.getPriority([pid]) 
+os.homedir() 
+os.hostname() 
+os.loadavg() 
+os.networkInterfaces() 
+os.platform() 
+os.release() 
+os.setPriority([pid, ]priority) 
+os.tmpdir() 
+os.totalmem() 
+os.type() 
+os.uptime() 
+os.userInfo([options]) 
+OS Constants 
+
+Signal Constants 
+Error Constants 
+
+POSIX Error Constants  
+Windows Specified Error Constants 
+dlopen Constants 
+Priority Constants 
+libuv Constants
+
+Path 
+
+Windows vs. POSIX 
+path.basename(path[, ext]) 
+path.delimiter 
+path.dirname(path) 
+path.extname(path) 
+path.format(pathObject) 
+path.isAbsolute(path) 
+path.join([...paths]) 
+path.normalize(path) 
+path.parse(path) 
+path.posix 
+path.relative(from, to) 
+path.resolve([...paths]) 
+path.sep 
+path.toNamespacePath(path) 
+path.win32 
+
+Performance Timing API 
+
+Class: Performance 
+
+performance.clearMarks([name]) 
+performance.mark([name]) 
+performance.measure(name, startMark, endMark) 
+performance.nodeTiming 
+performance.now() 
+performance.timeOrigin 
+performance.timerify(fn) 
+Class: PerformanceEntry 
+
+performanceEntry.duration 
+performanceEntry.name 
+performanceEntry.startTime
+performanceEntry.entryType 
+performanceEntry.kind 
+Class: PerformanceNodeTiming extends PerformanceEntry 
+
+performanceNodeTiming.bootstrapComplete 
+performanceNodeTiming.environment 
+performanceNodeTiming.loopExit 
+performanceNodeTiming.loopStart 
+performanceNodeTiming.v8Start 
+Class: PerformanceObserver 
+
+new PerformanceObserver(callback) 
+PerformanceObserver.disconnect() 
+performanceObserver.observe(options) 
+Class: PerformanceObserverEntryList 
+
+performanceObserverEntryList.getEntries() 
+performanceObserverEntryList.getEntriesByName(name[, type]) 
+performanceObserverEntryList.getEntriesByType(type)
+ 
+performanceObserverEntryList.getEntriesByType(type) 
+perf_hooks.monitorEventLoopDelay([options]) 
+
+
+Class: Historgram 
+
+histogram.disable() 
+histogram.enable() 
+histogram.exceeds 
+historgram.max 
+histogram.mean 
+histogram.min 
+histogram.percentile(percentile) 
+histogram.percentiles 
+histogram.reset() 
+histogram.stddev 
+Examples 
+
+Measuring the duration of async operations 
+Measuring how long it takes to load dependencies 
+
+Policies 
+
+Enabling 
+Features 
+
+Error Behavior 
+Integrity Checks 
+Dependency Redirection 
+
+Example: Pathced Dependency 
+
+Process 
+
+Process Events 
+
+Event: 'beforeExit' 
+Event: 'disconnect' 
+Event: 'exit' 
+Event: 'message' 
+Event: 'multipleResolves' 
+Event: 'rejectionHandled' 
+Event: 'uncaughtException' 
+
+Warning: Using 'uncaughtException' correctly 
+Event: 'unhandledRejection' 
+Event: 'warning' 
+
+Emitting custom warnings 
+Signal Events 
+process.abort() 
+process.allowedNodeEnvironmentFlags 
+process.arch 
+process.argv 
+process.channel 
+process.chdir(directory) 
+process.config 
+process.connected 
+process.cpuUsage([previousValue])
+process.cwd() 
+process.debugPort 
+process.disconnect() 
+process.dlopen(module, filename[, flags])
+process.emitWarning(warning([, options]))
+process.emitWarning(warning[, type[, code]][, ctor]) 
+
+Avoiding duplicate warnings 
+process.env 
+process.execArgv 
+process.execPath 
+process.exit([code]) 
+process.exitCode 
+process.gategid() 
+process.geteuid() 
+process.getgid() 
+process.getgroups() 
+process.getuid() 
+process.hasUncaughtExceptionCaptureCallback() 
+process.hrtime([time]) 
+process.hrtime.bigint() 
+process.initgroups(user, extraGroup) 
+process.kill(pid[, signal]) 
+process.mainModule 
+process.memoryUsage() 
+process.nextTick(callback[, ...args]) 
+process.noDeprecation 
+process.pid 
+process.platform 
+process.ppid 
+process.release 
+process.report 
+
+process.report.directory 
+process.report.filename 
+process.report.getReport([err]) 
+process.report.reportOnFatalError 
+process.report.reportOnSignal 
+process.report.reportOnUncaughtException 
+process.report.signal 
+process.report.writeReport([filename][, err])
+process.resourceUsage() 
+process.send(message[, sendHandle[, options]][, callback])
+process.setegid(id) 
+process.seteuid(id) 
+process.setgroups(groups) 
+process.setuid(id) 
+process.setUncaughtExceptionCaptureCallback(fn) 
+process.stderr 
+
+process.stderr.fd 
+process.stdin 
+
+process.stdin.fd 
+process.stdout 
+
+process.stdout.fd 
+A note on process I/O 
+process.throwDeprecation 
+process.title 
+process.traceDeprecation 
+process.umask([mask])
+process.uptime() 
+process.version 
+process.versions 
+Exist Codes 
+
+Query String 
+
+querystring.decode() 
+querystring.encode() 
+querystring.escape(str) 
+querystring.parse(str[, sep[, eq[, options]]]) 
+querystring.unescape(str) 
+
+Readline 
+
+Class: Interface 
+
+Event: 'close' 
+Event: 'line' 
+Event: 'pause' 
+Event: 'resume' 
+Event: 'SIGCONT' 
+Event: 'SIGINT' 
+Event: 'SIGISTP' 
+Event: 'SIGTSTP'
+rl.close() 
+rl.pause() 
+rl.prompt([preserveCursor]) 
+rl.question(query, callback) 
+rl.resume() 
+rl.setPrompt(prompt) 
+rl.write(data[, key]) 
+rl[Symbol.asyncIterator]() 
+rl.line 
+rl.cursor 
+rl.getCursorPos() 
+readline.clearLine(stream, dir[, callback]) 
+readline.clearScreenDown(stream[, callback]) 
+readline.createInterface(options) 
+
+Use of the completer Function 
+readline.curosrTo(stream, x[, y][, callback]) 
+readline.emitKeypressEvents(stream[, interface]) 
+readline.moveCursor(stream, dx, dy[, callback]) 
+Example: Tiney CLI 
+Example: Read File Stream Line-by-Line 
+
+REPL 
+
+Design and Features 
+
+Commands and Special Keys 
+Default Evaluation 
+
+JavaScript Expressions 
+Global and Local Scope 
+Accessing Core Node.js Modules 
+Global Uncaught Exceptions 
+Assignment of the _ (underscore) variable 
+await keyword 
+Custom Evaluation Functions 
+
+Recoverable Errors 
+Customizing REPL Output 
+Class: REPLServer 
+
+Event: 'exit' 
+Event: 'reset' 
+replServer.defineCommand(keyword, cmd) 
+replServer.displayPrompt([preserveCursor]) 
+replServer.clearBufferedCommand() 
+replServer.parseREPLKeyowrd(keyword[, rest]) 
+replServer.setupHistory(historyPath, callback) 
+repl.start([options]) 
+The Node.js REPL 
+
+Environment Variables Options 
+Persistent History 
+Using the Node.js REPL with advanced line-editors 
+Starting multiple REPL instances against a single running instance 
+
+Diagnostic Report 
+
+Usage 
+Configuration 
+Interaction with Workers 
+
+Stream 
+
+Organization of this Documents 
+Types of Streams 
+
+Object Mode 
+Buffering 
+API for Stream Consumers 
+
+Writable Streams 
+
+Class: stream.Writable 
+
+Event: 'close' 
+Event: 'drain' 
+Event: 'error'
+Event: 'finish'
+Event: 'pipe'
+Event: 'unpipe' 
+writable.cork() 
+writable.destroy([error])
+writable.destroyed 
+writable.end([chunk[, encoding]][, callback])
+writable.setDefaultEncoding(encoding) 
+writable.uncork() 
+writable.writable 
+writable.writableEnded 
+writable.writableCorked 
+Writable.writableFinished 
+writable.writableHighWaterMark 
+writable.writableLength 
+writable.writableObjectMode 
+writable.write(chunk[, encoding][, callback])
+Readable Streams 
+
+Two Reading Modes 
+Three States 
+Choose One API Style 
+Class: stream.Readable 
+
+Event: 'close'
+Event: 'data'
+Event: 'end' 
+Event: 'error'
+Event: 'pause'
+Event: 'readable'
+Event: 'resume'
+readable.destroy([error]) 
+readable.destroyed 
+readable.isPaused() 
+readable.pause() 
+readable.pipe(destination[, options])
+readable.read([size])
+readable.readable 
+readable.readableEncoding 
+readable.readableEnded 
+readable.readableFlowing 
+readable.readableHighWaterMark 
+readable.readableLength
+readable.readableObjectMode 
+readable.resume() 
+readable.setEncoding(encoding) 
+readable.unpip([destination])
+readable.unshift(chunk[, encoding])
+readable.wrap(stream) 
+readable[Symbol.asyncIterator]() 
+Duplex and Transform Streams 
+Class: stream.Duplex 
+Class: stream.Transform
+
+transform.destroy([error])
+stream.finished(stream[, options], callback)
+stream.pipeline(...streams, callback) 
+stream.Readable.from(iterable, [options])
+API for Stream Implementers
+
+Simplified Construction
+Implementing a Writable Stream 
+
+Constructor: new stream.Writable([options])
+writable._write(chunk, encoding, callback) 
+writable._writev(chunks, callback) 
+writable._destroy(err, callback) 
+writable._final(callback) 
+Errors While Writing 
+An Example Writable Stream 
+Decoding buffers in a Writable Stream 
+Implementing a Readable Stream 
+
+new stream.Readable([options])
+readable._read(size) 
+readable._destroy(err, callback) 
+readable.push(chunk[, encoding])
+Errors While Reading 
+An Example Counting Stream 
+Implementing a Duplex Stream 
+
+new stream.Duplex(options) 
+An Example Duplex Stream 
+Object Mode Duplex Streams 
+Implementing a Transform Stream 
+
+new stream.Transform([options])
+Events: 'finish' and 'end'
+transform._flush(callback) 
+transform._transform(chunk, encoding, callback) 
+Class: stream.PassThrough
+Additional Notes 
+
+Streams Compatibility with Async Generators and 
+Async Iterator 
+Consuming Readable Streams with Async Iterators
+Creating Readable Streams with Async Generators 
+Piping to Writable Streams from Async Iterators 
+Compatibility with Older Node.js Versions 
+readable.read(0) 
+readable.push('') 
+highWaterMark discrepancy after calling readable.setEncoding() 
+
+String Decoder 
+
+Class: StringDecoder 
+
+new StringDecoder([encoding])
+stringDecoder.end([buffer])
+stringDecoder.write(buffer) 
+
+Timers 
+
+Class: Immediate 
+
+immediate.hasRef() 
+immediate.ref() 
+immediate.unref() 
+Class: Timeout 
+
+timeout.hasRef() 
+timeout.ref() 
+timeout.refresh() 
+timeout.unref() 
+Scheduling Timers 
+
+setImmediate(callback[, ...args]) 
+setInterval(callback, delay[, ...args]) 
+setTimeout(callback, delay[, ...args])
+Cancelling Timers 
+
+clearImmediate(immediate) 
+clearInterval(timeout) 
+clearTimeout(timeout) 
+
+TLS (SSL) 
+
+TLS/SSL Concepts 
+
+
+Perfect Forward Secrecy 
+ALPN and SNI 
+Pre-shared keys 
+Client-initiated renegotiation attack mitigation 
+Session Resumption 
+Modifying the Default TLS Cipher suite 
+Class: tls.Server 
+
+Event: 'keylog' 
+Event: 'newSession' 
+Event: 'OCSPRequest' 
+Event: 'resumeSession'
+Event: 'secureConnection'
+Event: 'tlsClientError'
+server.addContext(hostname, context) 
+server.address() 
+server.close([callback]) 
+server.connections 
+server.getTicketKeys() 
+server.listen() 
+server.setSecureContext(options) 
+server.setTicketKeys(keys) 
+Class: tls.TLSSocket
+
+new tls.TLSSocket(socket[, options])
+Event: 'keylog' 
+Event: 'OCSPResponse'
+Event: 'secureConnect'
+Event: 'session'
+tlsSocket.address() 
+tlsSocket.authorizationError 
+tlsSocket.authorized 
+tlsSocket.disableRenegotiation() 
+tlsSocket.enableTrace() 
+tlsSocket.encrypted 
+tlsSocket.getCertificate() 
+tlsSocket.getCipher() 
+tlsSocket.getEphemeralKeyInfo() 
+tlsSocket.getFinished() 
+tlsSocket.getPeerCertificate([detailed])
+
+Certificate Object 
+tlsSocket.getPeerFinished() 
+tlsSocket.getProtocol() 
+tlsSocket.getSession() 
+tlsSocket.getSharedSigalgs() 
+tlsSocket.getTLSTicket() 
+tlsSocket.isSessionReused() 
+tlsSocket.localAddress 
+tlsSocket.localPort 
+tlsSocket.remoteAddress 
+tlsSocket.remoteFamily 
+tlsSocket.remotePort 
+tlsSocket.renegotiate(options, callback) 
+tlsSocket.setMaxSendFragment(size) 
+tls.checkServerIdentity(hostname, cert) 
+tls.connect(options[, callback]) 
+tls.connect(path[, options][, callback])
+tls.connect(port[, host][, options][, callback])
+tls.createSecureContext([options])
+tls.createServer([options][, secureConnectionListener])
+tls.getCiphers() 
+tls.rootCertificates 
+tls.DEFAULT_ECDH_CURVE
+tls.DEFAULT_MAX_VERSION
+tls.DEFAULT_MIN_VERSION
+
+Trace Events 
+
+The trace_events module 
+
+Tracing object 
+
+tracing.categories 
+tracing.disable() 
+tracing.enable() 
+tracing.enabled 
+trace_events.createTracing(options) 
+trace_events.getEnabledCategories() 
+
+TTY 
+
+Class: tty.ReadStream 
+
+readStream.isRaw 
+readStream.isTTY 
+readStream.setRawMode(mode) 
+Class: tty.WriteStream 
+
+Event: 'resize' 
+writeStream.clearLine(dir[, callback])
+writeStream.clearScreenDown([callback])
+writeStream.columns 
+writeStream.cursorTo(x[, y][, callback ])
+writeStream.getColorDepth([env])
+writeStream.getWindowSize() 
+writeStream.hasColors([count][, env])
+writeStream.isTTY
+writeStream.moveCursor(dx, dy[, callback])
+writeStream.rows 
+tty.isatty(fd) 
+
+UDP/Datagram Sockets 
+
+Class: dgram.Socket 
+
+Event: 'close' 
+Event: 'connect'
+
 
 
 

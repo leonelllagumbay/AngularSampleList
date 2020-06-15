@@ -1,0 +1,14 @@
+:host(a) {
+  color: blue;
+}
+
+:host(.ac) {  /* prevent dat-gui from being selected */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+:host(.control-inactive) {
+  color: #888;
+}

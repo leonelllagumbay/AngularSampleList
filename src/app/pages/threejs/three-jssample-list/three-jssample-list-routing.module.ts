@@ -7,6 +7,7 @@ import { LightsHemisphereComponent } from './components/lights-hemisphere/lights
 import { ClothSimulationComponent } from './components/cloth-simulation/cloth-simulation.component';
 import { LittlestTokyoComponent } from './components/littlest-tokyo/littlest-tokyo.component';
 import { SkeletalAnimationBlendingComponent } from './components/skeletal-animation-blending/skeletal-animation-blending.component';
+import { AdditiveAnimationSkinningComponent } from './components/additive-animation-skinning/additive-animation-skinning.component';
 
 const routes: Routes = [
   {
@@ -27,6 +28,9 @@ const routes: Routes = [
   }, {
     path: 'skeletal-animation-blending',
     component: SkeletalAnimationBlendingComponent
+  }, {
+    path: 'additive-animation-skinning',
+    component: AdditiveAnimationSkinningComponent
   }
 ];
 

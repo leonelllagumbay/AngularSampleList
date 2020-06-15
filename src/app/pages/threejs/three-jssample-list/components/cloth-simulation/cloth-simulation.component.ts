@@ -241,6 +241,7 @@ export class ClothSimulationComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.gui.destroy();
+    this.container.innerHTML = '';
   }
 
   init() {

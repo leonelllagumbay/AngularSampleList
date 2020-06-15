@@ -10,7 +10,8 @@ import { GUI } from 'three/examples/jsm/libs/dat.gui.module.js';
   styleUrls: ['./skeletal-animation-blending.component.scss'],
 })
 export class SkeletalAnimationBlendingComponent implements OnInit, OnDestroy {
-  @ViewChild('skeletalAnimationBlending', {static: true}) skeletalAnimationBlending: ElementRef;
+  @ViewChild('skeletalAnimationBlending', {static: true})
+  skeletalAnimationBlending: ElementRef;
   scene: any;
   renderer: any;
   camera: any;
@@ -44,6 +45,7 @@ export class SkeletalAnimationBlendingComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.panel.destroy();
+    this.container.innerHTML = '';
   }
 
   init() {
